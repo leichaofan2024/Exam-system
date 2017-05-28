@@ -1,5 +1,5 @@
 class ChoicesController < ApplicationController
-    before_action :authenticate_user!, only: [:create]
+    # before_action :authenticate_user!, only: [:create]
 
     def index
       @choices = Choice.all
@@ -22,7 +22,7 @@ class ChoicesController < ApplicationController
 
     def create
       @choice = Choice.new(choice_params)
-      @choice.user = current_user
+      # @choice.user = current_user
 
       if @choice.save
         redirect_to choice_path(@choice)
@@ -120,7 +120,7 @@ class ChoicesController < ApplicationController
   end
 
   def choice_params
-    params.require(:choice).permit(:name,:is_aa1en,:is_bb1en,:is_cc1en,:is_dd1en,:is_ee1en,:is_ff1en)
+    params.require(:choice).permit(:is_user,:name,:is_aa1en,:is_bb1en,:is_cc1en,:is_dd1en,:is_ee1en,:is_ff1en)
   end
 
 

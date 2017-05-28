@@ -22,6 +22,14 @@ create_exams =
   Exam.create!([name: "1", question: "中国有多少个省份？",answer_1:"36", answer_2:"35",answer_3:"34",answer_4:"33" ,
     category_id: 1, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false,countdown:"2017-05-31T00:30"])
 
-  create_exams =
-    Exam.create!([name: "2", question: "中国有多少个民族？",answer_1:"48", answer_2:"35",answer_3:"34",answer_4:"56",
-      category_id: 2, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true,countdown:"2017-05-31T00:30"])
+create_choices =
+  Exam.create!([name: "1",answer_1:"36", answer_2:"35",answer_3:"34",answer_4:"33" ,
+     is_aa1en: true ,is_bb1en: false,is_cc1en: false,is_dd1en: false)
+
+create_exams =
+  Exam.create!([name: "2", question: "中国有多少个民族？",answer_1:"48", answer_2:"35",answer_3:"34",answer_4:"56",
+    category_id: 2, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true,countdown:"2017-05-31T00:30"])
+
+create_choices =
+  Exam.create!([name: "2",answer_1:"48", answer_2:"35",answer_3:"34",answer_4:"56",
+     is_aa1en: false ,is_bb1en: false,is_cc1en: true,is_dd1en: false)

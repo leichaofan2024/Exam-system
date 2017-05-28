@@ -1,5 +1,5 @@
 class Choice < ApplicationRecord
-  belongs_to :user
+
   def aa!
     self.is_aa1en = false
     self.save
@@ -53,4 +53,5 @@ class Choice < ApplicationRecord
     self.is_ff1en = true
     self.save
   end
+
 end
