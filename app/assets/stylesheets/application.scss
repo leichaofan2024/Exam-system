@@ -128,7 +128,7 @@ div.alert {
 .navbar-default {
   margin-bottom: 0;
   border-radius: 0;
-  background: #388E3C;//====navbar
+  background: #333333;//====navbar
     .navbar-header {
       margin-left: 9%;
       a {
@@ -235,4 +235,350 @@ div.alert {
     line-height: 40px;
 
   }
+}
+
+
+//----------  我新加的CSS  ------------
+
+
+
+//-----part 2----------
+.part2 {
+  background-color: #ffffff;
+  height: auto;
+  margin: -30px -20px;
+}
+
+h2.section-title {
+  color: #727272;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 700
+}
+.talk-about-us {
+  padding-bottom: 160px;
+  padding-top: 60px;
+  color: #666
+}
+
+.talk-about-us strong {
+  margin-top: 25px;
+  color: #4A6BB5;
+  font-weight: 600;
+  font-style: italic
+}
+
+.talk-about-us .item>img {
+  width: 150px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  margin-bottom: 10px
+}
+
+.talk-about-us .item>p {
+  max-width: 600px;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  line-height: 2;
+  margin-bottom: 20px
+}
+
+.talk-about-us .carousel-indicators>li {
+  background-color: #dcdcdc;
+  border: 0 none;
+  height: 10px;
+  margin: 1px;
+  width: 10px;
+  border-radius: 0;
+  margin: 0 5px;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+
+.talk-about-us .carousel-indicators li.active {
+  background-color: #4A6BB5
+}
+
+.talk-about-us .carousel-indicators {
+  bottom: -70px
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%
+}
+
+.carousel-inner>.item {
+  display: none;
+  position: relative;
+  -webkit-transition: 0.6s ease-in-out left;
+  -o-transition: 0.6s ease-in-out left;
+  transition: 0.6s ease-in-out left
+}
+
+.carousel-inner>.item>img,.carousel-inner>.item>a>img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  line-height: 1
+}
+
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-inner>.item {
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    -moz-transition: -moz-transform 0.6s ease-in-out;
+    -o-transition: -o-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px
+  }
+
+  .carousel-inner>.item.next,.carousel-inner>.item.active.right {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    left: 0
+  }
+
+  .carousel-inner>.item.prev,.carousel-inner>.item.active.left {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    left: 0
+  }
+
+  .carousel-inner>.item.next.left,.carousel-inner>.item.prev.right,.carousel-inner>.item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    left: 0
+  }
+}
+
+.carousel-inner>.active,.carousel-inner>.next,.carousel-inner>.prev {
+  display: block
+}
+
+.carousel-inner>.active {
+  left: 0
+}
+
+.carousel-inner>.next,.carousel-inner>.prev {
+  position: absolute;
+  top: 0;
+  width: 100%
+}
+
+.carousel-inner>.next {
+  left: 100%
+}
+
+.carousel-inner>.prev {
+  left: -100%
+}
+
+.carousel-inner>.next.left,.carousel-inner>.prev.right {
+  left: 0
+}
+
+.carousel-inner>.active.left {
+  left: -100%
+}
+
+.carousel-inner>.active.right {
+  left: 100%
+}
+
+.lp-section-3 {
+  background-color: #e2e2e2;
+  min-width: 100%;
+  height: 650px;
+  padding-bottom: 10px;//内部的底部边距，这样按钮不会很靠近底部了
+  margin: 0 -15px 20px;
+}
+
+.short-line {
+  display: block;
+  background: #848484;
+  border-style: none;
+  border-radius: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  z-index: 53;
+  width: 70px;
+  height: 3px;
+  position: relative;
+}
+
+#trip1 {
+   transition: box-shadow 0.3s;
+}
+#trip1:hover{
+ box-shadow: 5px 0px 40px rgba(0,0,0, 0.9)
+}
+
+// ----------   3 -----------
+.lp-section-4 {
+  background-color: #e2e2e2;
+  width: auto;
+  height: 450px;
+  padding-bottom: 10px;//内部的底部边距，这样按钮不会很靠近底部了
+  margin: -20px -15px 20px;
+}
+.content_body {
+  width: 980px;
+  width: 1240px;
+  margin: 0 auto;
+  padding: 130px 0;
+}
+li, ul{
+  margin: 0;
+  padding: 0;
+  color: #000000;
+}
+.content_body ul li {
+  /* box-sizing: border-box; */
+  float: left;
+}
+.banners_li {
+  width: 33.33%;
+  text-align: left;
+}
+.banners_li a {
+  padding-top: 30px;
+  display: block;
+  text-align: center;
+  border-right: 2px solid #777676;
+}
+
+.banners_li_last a {
+ display: block;
+ text-align: center;
+ border-right: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.banners_li a img {
+ border-radius: 5px;
+  margin-right: 24px;
+  margin-top: -40px;
+  width: 100px;
+  height: 100px;
+  align: center;
+}
+.banners_li a div {
+  display: inline-block;
+  cursor: pointer;
+  zoom: 1;
+}
+.banners_li a h3 {
+  font-size: 20px;
+  color: #333333;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+}
+.banners_li a p {
+ padding: 0 5px;
+  font-size: 14px;
+  color: #939393;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+}
+.content-3 {
+  display: block;
+  width: 960px;
+  height: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.feature-block {
+  display: block;
+  border-style: none;
+  border-radius: 0;
+  width: 290px;
+  position: relative;
+  margin: 40px 15px 0;
+  float: left;
+}
+.feature-block img {
+  border-radius: 5px;
+  width: 300px;
+  height: 150px;
+}
+
+//--------  4 --------------
+.lp-section-6 {
+   background-image: url('https://ws3.sinaimg.cn/large/006tNbRwly1ffztdoxar2j31hc0dcgr9.jpg');
+   min-width: 100%;
+   height: 200px;
+   padding-bottom: 10px;//内部的底部边距，这样按钮不会很靠近底部了
+   margin: -20px -15px 20px;
+}
+
+.oblique {
+ font-style:oblique;
+ text-align: center;
+ color: white;
+}
+
+//---------- 5 ------------
+.content-5 {
+  height: auto;
+  padding: 0;
+}
+.content-4 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  padding: 30px 0 0 120px;
+  position: relative;
+}
+.des {
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.list {
+  max-width: 960px;
+  text-align: center;
+}
+.list img {
+  max-height: 40px;
+  margin: 15px auto 15px;
+}
+
+
+timer{
+
+text-align: center;
+
+font-size: 30px;
+
+color: white;
+
+background-color:black;
+
 }
