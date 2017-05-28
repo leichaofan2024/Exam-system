@@ -3,7 +3,6 @@ class ChoicesController < ApplicationController
 
     def index
       @choices = Choice.all
-
       @exams = Exam.all
     end
 
