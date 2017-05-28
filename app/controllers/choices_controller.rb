@@ -1,5 +1,5 @@
 class ChoicesController < ApplicationController
-    # before_action :authenticate_user!, only: [:create]
+    before_action :authenticate_user!, only: [:create]
 
     def index
       @choices = Choice.all
@@ -22,7 +22,7 @@ class ChoicesController < ApplicationController
 
     def create
       @choice = Choice.new(choice_params)
-      # @choice.user = current_user
+      # @choice.user = is_admin
 
       if @choice.save
         redirect_to choice_path(@choice)

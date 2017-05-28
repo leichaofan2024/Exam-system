@@ -20,6 +20,7 @@
        </td>
        <td>
          <% @choices.each do |choice| %>
+         
            <% if choice.is_aa1en %>
             <%= link_to aa_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
             <i class="fa fa-check"></i><% end %>  A. <%= exam.answer_1 %>
