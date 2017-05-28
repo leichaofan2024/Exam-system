@@ -18,6 +18,40 @@ Category.create(name: "运输部")
 # Size.create(name: "判断题")
 # Size.create(name: "选择题")
 # Size.create(name: "识图题")
+
+create_products =
+  Product.create!(title: "铁路试卷", description: "铁路部专属培训",quantity:"100", price:"99",size:"1",
+    category_id: 1,image: open("http://pic7.nipic.com/20100429/1678680_142650061643_2.jpg"))
+
+
+create_products =
+  Product.create!(title: "电力调度培训", description: "铁路部专属培训",quantity:"100", price:"199",size:"1",
+    category_id: 1,image: open("http://pic7.nipic.com/20100429/1678680_142650061643_2.jpg"))
+
+create_products =
+  Product.create!(title: "运输试卷", description: "铁路部专属培训",quantity:"100", price:"99",size:"1",
+    category_id: 1,image: open("http://pic7.nipic.com/20100429/1678680_142650061643_2.jpg"))
+
+create_products =
+  Product.create!(title: "调度", description: "铁路部专属培训",quantity:"100", price:"99",size:"1",
+    category_id: 1,image: open("http://pic7.nipic.com/20100429/1678680_142650061643_2.jpg"))
+
+create_products =
+  Product.create!(title: "集成", description: "运输部专属培训",quantity:"100", price:"299",size:"1",
+    category_id: 2,image: open("http://pic7.nipic.com/20100429/1678680_142650061643_2.jpg"))
+
+create_products =
+  Product.create!(title: "总站", description: "运输部专属培训",quantity:"100", price:"399",size:"1",
+    category_id: 2,image: open("http://pic7.nipic.com/20100429/1678680_142650061643_2.jpg"))
+
+create_products =
+  Product.create!(title: "站台", description: "运输部专属培训",quantity:"100", price:"99",size:"1",
+    category_id: 2,image: open("http://pic7.nipic.com/20100429/1678680_142650061643_2.jpg"))
+
+create_products =
+  Product.create!(title: "铁路总局", description: "运输部专属培训",quantity:"100", price:"299",size:"1",
+    category_id: 2,image: open("http://pic7.nipic.com/20100429/1678680_142650061643_2.jpg"))
+
 create_exams =
   Exam.create!([name: "1", question: "中国有多少个省份？",answer_1:"34", answer_2:"35",answer_3:"36",answer_4:"33" ,
     category_id: 1, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false,countdown:"2017-05-31T00:30"])
