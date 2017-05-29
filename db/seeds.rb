@@ -12,8 +12,8 @@ u.password_confirmation = "123456"
 u.is_admin = true
 u.save
 
-Category.create(name: "铁道部")
-Category.create(name: "运输部")
+Category.create(name: "远动调度")
+Category.create(name: "电力调度")
 
 # Size.create(name: "判断题")
 # Size.create(name: "选择题")
@@ -53,7 +53,7 @@ create_products =
     category_id: 2,image: open("http://pic7.nipic.com/20100429/1678680_142650061643_2.jpg"))
 
 create_exams =
-  Exam.create!([name: "1", question: "中国有多少个省份？",answer_1:"34", answer_2:"35",answer_3:"36",answer_4:"33" ,
+  Exam.create!([name: "1", question: "接触网断电操作步骤？",answer_1:"34", answer_2:"35",answer_3:"36",answer_4:"33" ,
     category_id: 1, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false,countdown:"2017-05-31T00:30"])
 
 create_choices =
@@ -62,7 +62,7 @@ create_choices =
 
 
 create_exams =
-  Exam.create!([name: "2", question: "中国有多少个民族？",answer_1:"48", answer_2:"56",answer_3:"34",answer_4:"35",
+  Exam.create!([name: "2", question: "继电器保护装置种类？",answer_1:"48", answer_2:"56",answer_3:"34",answer_4:"35",
     category_id: 2, is_a1en: false ,is_b1en: true,is_c1en: false,is_d1en: false,countdown:"2017-05-31T00:30"])
 
 create_choices =
@@ -71,7 +71,7 @@ create_choices =
 
 
   create_exams =
-    Exam.create!([name: "3", question: "北京的6月哪个季节？",answer_1:"春天", answer_2:"冬天",answer_3:"夏天",answer_4:"秋天",
+    Exam.create!([name: "3", question: "SCADA作业规范？",answer_1:"aaa", answer_2:"bbb",answer_3:"ccc",answer_4:"ddd",
       category_id: 1, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false,countdown:"2017-05-31T00:30"])
 
   create_choices =
