@@ -16,12 +16,21 @@
   <div class="col-md-6">
     <h2><%= @exam.question %></h2>
     <div style="height: 100px;">
+      <hr>
+      <p>正确答案</p>
+
       <p>
-        <%= @exam.answer_1 %>
-        <br>
-        <%= @exam.answer_2 %>
+          <%= render_a1_status(@exam) %> A.<%= @exam.answer_1 %>
+          <br><br>
+          <%= render_b1_status(@exam) %> B.<%= @exam.answer_2 %>
+          <br><br>
+          <%= render_c1_status(@exam) %> C.<%= @exam.answer_3 %>
+          <br><br>
+          <%= render_d1_status(@exam) %> D.<%= @exam.answer_4 %>
       </p>
+
+     <div>试题类别: <%= @exam.category_id %></div>
     </div>
-    <div>试题类别: <%= @exam.category_id %></div>
+
   </div>
 </div>

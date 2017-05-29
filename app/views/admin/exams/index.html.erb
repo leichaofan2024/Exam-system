@@ -115,7 +115,9 @@
        </td>
        <td>
          <% @choices.each do |choice| %>
+         <% if exam.name = @choice.name %>
          <%= choice.name %>
+         <% end %>
          <% end %>
        </td>
 
