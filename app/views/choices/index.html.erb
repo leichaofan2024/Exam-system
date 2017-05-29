@@ -20,7 +20,7 @@
        </td>
        <td>
          <% @choices.each do |choice| %>
-         
+
            <% if choice.is_aa1en %>
             <%= link_to aa_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
             <i class="fa fa-check"></i><% end %>  A. <%= exam.answer_1 %>
@@ -58,18 +58,19 @@
              <%= link_to dd1_choice_path(choice), method: :post, class: "btn btn-xs btn-warning" do %>
              <i class="fa fa-square-o"></i><% end %> D. <%= exam.answer_4 %>
            <% end %>
-         <!-- <% end %> -->
+
+         <% end %>
          </td>
 
          <td>
            <!-- <% @choices.each do |choice| %> -->
              <%= link_to("开始答题", edit_choice_path(choice)) %> |
-             <%= link_to("Delete", choice_path(choice), method: :delete, data: { confirm: "Are your sure?" }) %>
-
+             <%= link_to("删除答案", choice_path(choice), method: :delete, data: { confirm: "Are your sure?" }) %>
+           <!-- <% end %> -->
          </td>
         <% end %>
 
-      <% end %>
+
      </tr>
    </tbody>
  </table>

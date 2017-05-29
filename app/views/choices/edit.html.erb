@@ -13,6 +13,7 @@
     <thead>
 
     <tbody>
+    <% if exam.name = @choice.name %>
       <tr>
         <td><%= exam.name %></td>
         <td>
@@ -23,6 +24,7 @@
           <%= f.input :is_dd1en, :label => "D." %> <%=  exam.answer_4 %>
         </td>
     <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
   <% end %>
   <% end %>
 </div>
