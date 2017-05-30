@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20170525035803) do
     t.boolean  "is_ee1en"
     t.boolean  "is_ff1en"
     t.integer  "exam_id"
-    t.integer  "score"
+    t.float    "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

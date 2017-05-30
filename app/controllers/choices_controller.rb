@@ -3,6 +3,7 @@ class ChoicesController < ApplicationController
 
     def index
       @exams = Exam.all
+
     end
 
     def show
@@ -23,7 +24,7 @@ class ChoicesController < ApplicationController
     def create
       @choice = Choice.new(choice_params)
       @choice.exam_id = params[:exam_id]
-
+      @choice.score = 0
       # @choice.user = is_admin
 
 
@@ -38,24 +39,6 @@ class ChoicesController < ApplicationController
     def update
       @choice = Choice.find(params[:id])
 
-      if choice.is_aa1en == choice.exam.is_a1en
-        score += 1.25
-      else
-      end
-      #
-      # if choice.is_bb1en == choice.exam.is_b1en
-      #   score += 1.25
-      # else
-      # end
-      #
-      #
-      # @choice.score = score
-
-      # if @choice.is_aa1en == @choice.exam.is_a1en && @choice.is_bb1en == @choice.exam.is_b1en && @choice.is_cc1en == @choice.exam.is_c1en && @choice.is_dd1en == @choice.exam.is_d1en
-      #   @choice.score += 25
-      # else
-      # end
-
 
       if @choice.update(choice_params)
         redirect_to choices_path
@@ -65,6 +48,7 @@ class ChoicesController < ApplicationController
     end
 
     def destroy
+
       @choice = Choice.find(params[:id])
       @choice.destroy
       flash[:alert] = "exam Deleted"
@@ -141,7 +125,7 @@ class ChoicesController < ApplicationController
   end
 
   def choice_params
-    params.require(:choice).permit(:is_user,:name,:is_aa1en,:is_bb1en,:is_cc1en,:is_dd1en,:is_ee1en,:is_ff1en,:exam_id)
+    params.require(:choice).permit(:is_user,:name,:is_aa1en,:is_bb1en,:is_cc1en,:is_dd1en,:is_ee1en,:is_ff1en,:exam_id,:score)
   end
 
 

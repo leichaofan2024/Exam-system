@@ -10,7 +10,7 @@ class CreateChoices < ActiveRecord::Migration[5.0]
       t.boolean :is_ee1en, defaut: false
       t.boolean :is_ff1en, defaut: false
       t.integer :exam_id
-      t.integer :score
+      t.float :score
 
       t.timestamps
     end

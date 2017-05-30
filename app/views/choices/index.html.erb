@@ -36,12 +36,15 @@
            <%= render_cc1_status(choice) %> C.<%= exam.answer_3 %>
            <br><br>
            <%= render_dd1_status(choice) %> D.<%= exam.answer_4 %>
+           <% end %>
 
-         <% end %>
        </td>
 
          <td>
              <%= link_to("开始答题", edit_choice_path(exam)) %>
+
+             <!-- <%= link_to("Delete", choice_path(exam), method: :delete, data: { confirm: "Are your sure?" }) %> -->
+
          </td>
         <% end %>
 

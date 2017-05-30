@@ -55,4 +55,5 @@ class Choice < ApplicationRecord
     self.save
   end
 
+
 end

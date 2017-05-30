@@ -1,7 +1,6 @@
 <h2> 考试题 </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增试题", new_admin_exam_path, class: "btn btn-primary btn-sm") %>
-  <%= link_to("新增答案代号", new_choice_path, class: "btn btn-primary btn-sm") %>
 </div>
 
 <table class="table table-bordered">
@@ -13,8 +12,7 @@
       <th>true_answer</th>
       <th width="100"> Options </th>
       <td>试题代号 </td>
-      <th>填写答案代号</th>
-      <th>已填答案代号</th>
+      <th>不做任何勾选，直接提交，且只能提交一次</th>
     </tr>
   </thead>
   <tbody>
@@ -102,7 +100,6 @@
        <td>
            <%= simple_form_for @choice do |f| %>
            <input type="hidden" name="exam_id" value="<%= exam.id %>">
-           <%= f.input :name, placeholder: "请输入与试题相同的代号"%>
            <%= f.input :is_aa1en, :label => "A." %>
            <br>
            <%= f.input :is_bb1en, :label => "B." %>
@@ -114,13 +111,8 @@
            <% end %>
 
        </td>
-       <td>
-         <% @choices.each do |choice| %>
-         <% if exam.name = @choice.name %>
-         <%= choice.name %>
-         <% end %>
-         <% end %>
-       </td>
+
+
 
       <% end %>
      </tr>
