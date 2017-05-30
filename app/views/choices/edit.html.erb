@@ -10,7 +10,8 @@
       <th>#</th>
       <th>问题</th>
       <th>选项</th>
-      <th>#</th>
+      <!-- <th>选择</th> -->
+      <th>上次选择</th>
     </tr>
   </thead>
 
@@ -29,14 +30,55 @@
           <br><br>
           <%= f.submit "Submit", class: "btn btn-default" %>
         </td>
+        <!-- <td>
+          <% if @choice.is_aa1en %>
+            <%= link_to aa_choice_path(@choice), method: :post, class: "btn btn-xs btn-success" do %>
+            <i class="fa fa-check"></i><% end %> A. <%= @exam.answer_1 %>
+          <% else %>
+            <%= link_to aa1_choice_path(@choice), method: :post, class: "btn btn-xs btn-warning" do %>
+            <i class="fa fa-square-o"></i><% end %> A. <%= @exam.answer_1 %>
+          <% end %>
+          <br><br>
+
+          <% if @choice.is_bb1en %>
+            <%= link_to bb_choice_path(@choice), method: :post, class: "btn btn-xs btn-success" do %>
+            <i class="fa fa-check"></i><% end %> B. <%= @exam.answer_3 %>
+          <% else %>
+            <%= link_to bb1_choice_path(@choice), method: :post, class: "btn btn-xs btn-warning" do %>
+            <i class="fa fa-square-o"></i><% end %> B. <%= @exam.answer_3 %>
+          <% end %>
+          <br><br>
+
+          <% if @choice.is_cc1en %>
+            <%= link_to cc_choice_path(@choice), method: :post, class: "btn btn-xs btn-success" do %>
+            <i class="fa fa-check"></i><% end %> C. <%= @exam.answer_3 %>
+          <% else %>
+            <%= link_to cc1_choice_path(@choice), method: :post, class: "btn btn-xs btn-warning" do %>
+            <i class="fa fa-square-o"></i><% end %> C. <%= @exam.answer_3 %>
+          <% end %>
+          <br><br>
+
+          <% if @choice.is_dd1en %>
+            <%= link_to cc_choice_path(@choice), method: :post, class: "btn btn-xs btn-success" do %>
+            <i class="fa fa-check"></i><% end %> D. <%= @exam.answer_4 %>
+          <% else %>
+            <%= link_to dd1_choice_path(@choice), method: :post, class: "btn btn-xs btn-warning" do %>
+            <i class="fa fa-square-o"></i><% end %> D. <%= @exam.answer_4 %>
+          <% end %>
+          <br><br>
+          <%= simple_form_for [@choice] do |f| %>
+          <%= f.submit "Submit", class: "btn btn-default" %>
+          <% end %>
+
+        </td> -->
         <td>
-          <%= render_aa1_status(@choice) %> A.
+          <%= render_aa1_status(@choice) %> A.<%=  @exam.answer_1 %>
           <br><br>
-          <%= render_bb1_status(@choice) %> B.
+          <%= render_bb1_status(@choice) %> B.<%=  @exam.answer_2 %>
           <br><br>
-          <%= render_cc1_status(@choice) %> C.
+          <%= render_cc1_status(@choice) %> C.<%=  @exam.answer_3 %>
           <br><br>
-          <%= render_dd1_status(@choice) %> D.
+          <%= render_dd1_status(@choice) %> D.<%=  @exam.answer_4 %>
         </td>
 
 

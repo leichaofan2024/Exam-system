@@ -5,7 +5,8 @@
     <tr>
       <th>#</th>
       <th>question</th>
-      <th width="100"> Options </th>
+      <th width="100"> 我的答案 </th>
+      <th width="100"> 答案正确与否 </th>
       <th>管理</th>
     </tr>
   </thead>
@@ -20,16 +21,34 @@
        </td>
        <td>
          <% exam.choices.each do |choice| %>
-           <% if choice.is_aa1en %>
-           <%= link_to aa_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
-           <i class="fa fa-check"></i><% end %>  A. <%= exam.answer_1 %>
-            <% if choice.is_aa1en == choice.exam.is_a1en %>
+         <%= render_aa1_status(choice) %> A.<%= exam.answer_1 %>
+         <br><br>
+         <%= render_bb1_status(choice) %> B.<%= exam.answer_2 %>
+         <br><br>
+         <%= render_cc1_status(choice) %> C.<%= exam.answer_3 %>
+         <br><br>
+         <%= render_dd1_status(choice) %> D.<%= exam.answer_4 %>
+       </td>
+       <td>
 
+         <% if (choice.is_aa1en == choice.exam.is_a1en) && (choice.is_bb1en == choice.exam.is_b1en) && (choice.is_cc1en == choice.exam.is_c1en) && (choice.is_dd1en == choice.exam.is_d1en) %>
               Yes
             <% else %>
-            No
+             No
             <% end %>
-           <% else %>
+
+
+           <!-- <% if choice.is_aa1en %> -->
+           <!-- <%= link_to aa_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
+           <i class="fa fa-check"></i><% end %>  A. <%= exam.answer_1 %> -->
+
+            <!-- <% if choice.is_aa1en == choice.exam.is_a1en %>
+          A. <%= exam.answer_1 %>  Yes
+            <% else %>
+          A. <%= exam.answer_1 %>  No
+            <% end %> -->
+
+           <!-- <% else %>
              <%= link_to aa1_choice_path(choice), method: :post, class: "btn btn-xs btn-warning" do %>
              <i class="fa fa-square-o"></i><% end %> A. <%= exam.answer_1 %>
              <% if choice.is_aa1en == choice.exam.is_a1en %>
@@ -38,44 +57,63 @@
              <% else %>
              No
              <% end %>
-           <% end %>
+           <% end %> -->
 
-           <br><br>
+           <!-- <br><br> -->
 
-           <% if choice.is_bb1en %>
+           <!-- <% if choice.is_bb1en %>
              <%= link_to bb_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
              <i class="fa fa-check"></i><% end %> B. <%= exam.answer_2 %>
            <% else %>
              <%= link_to bb1_choice_path(choice), method: :post, class: "btn btn-xs btn-warning" do %>
              <i class="fa fa-square-o"></i><% end %> B. <%= exam.answer_2 %>
+           <% end %> -->
+
+           <!-- <% if choice.is_bb1en == choice.exam.is_b1en %>
+         B. <%= exam.answer_2 %>  Yes
+           <% else %>
+         B. <%= exam.answer_2 %>  No
            <% end %>
 
-            <br><br>
+            <br><br> -->
 
-           <% if choice.is_cc1en %>
+           <!-- <% if choice.is_cc1en %>
              <%= link_to cc_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
              <i class="fa fa-check"></i><% end %> C. <%= exam.answer_3 %>
            <% else %>
              <%= link_to cc1_choice_path(choice), method: :post, class: "btn btn-xs btn-warning" do %>
              <i class="fa fa-square-o"></i><% end %> C. <%= exam.answer_3 %>
+           <% end %> -->
+
+           <!-- <% if choice.is_cc1en == choice.exam.is_c1en %>
+         C. <%= exam.answer_3 %>  Yes
+           <% else %>
+         C. <%= exam.answer_3 %>  No
            <% end %>
 
-            <br><br>
+            <br><br> -->
 
-           <% if choice.is_dd1en %>
+           <!-- <% if choice.is_dd1en %>
              <%= link_to dd_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
              <i class="fa fa-check"></i><% end %> D. <%= exam.answer_4 %>
            <% else %>
              <%= link_to dd1_choice_path(choice), method: :post, class: "btn btn-xs btn-warning" do %>
              <i class="fa fa-square-o"></i><% end %> D. <%= exam.answer_4 %>
+           <% end %> -->
+
+           <!-- <% if choice.is_dd1en == choice.exam.is_d1en %>
+         D. <%= exam.answer_4 %>  Yes
+           <% else %>
+         D. <%= exam.answer_4 %>  No
            <% end %>
 
          <% end %>
-         </td>
+         </td> -->
+
 
          <td>
 
-             <%= link_to("开始答题", edit_choice_path(exam)) %> |
+             <%= link_to("开始答题", edit_choice_path(exam)) %>
 
 
          </td>
@@ -85,3 +123,5 @@
      </tr>
    </tbody>
  </table>
+
+ <%= link_to("交卷 ", exams_path(@exam)) %>

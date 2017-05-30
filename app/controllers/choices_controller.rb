@@ -51,9 +51,10 @@ class ChoicesController < ApplicationController
       #
       # @choice.score = score
 
-      # if choice.is_aa1en == choice.exam.is_a1en && choice.is_bb1en == choice.exam.is_b1en && choice.is_cc1en == choice.exam.is_c1en
+      # if choice.is_aa1en == choice.exam.is_a1en && choice.is_bb1en == choice.exam.is_b1en && choice.is_cc1en == choice.exam.is_c1en && choice.is_dd1en == choice.exam.is_d1en
       #   score += 5
       # else
+      # end
 
 
       if @choice.update(choice_params)
