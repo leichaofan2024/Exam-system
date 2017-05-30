@@ -101,6 +101,7 @@
 
        <td>
            <%= simple_form_for @choice do |f| %>
+           <input type="hidden" name="exam_id" value="<%= exam.id %>">
            <%= f.input :name, placeholder: "请输入与试题相同的代号"%>
            <%= f.input :is_aa1en, :label => "A." %>
            <br>

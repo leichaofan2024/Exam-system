@@ -12,6 +12,7 @@
 
                         <div class="item active">
                             <div class="row">
+                              <!-- product.images.each do |p| -->
 
                                 <div class="col-sm-3">
                                   <div class="product-card-block">
@@ -54,10 +55,12 @@
                                     </div>
                                   </div>
                                 </div>
+
+                              <!-- end -->
                                 <div class="col-sm-3">
                                   <div class="product-card-block">
                                     <div class="img-block">
-                                      <%= link_to product_path(@p2) do %>
+                                      <%= link_to product_path(p) do %>
                                       <% if @p2.photos.present? %>
                                           <%= image_tag(@p2.photos[0].image.thumb.url) %>
                                       <% else %>
@@ -165,6 +168,7 @@
                                     </div>
                                   </div>
                                 </div>
+
                             </div>
                             <!--/row-->
                         </div>

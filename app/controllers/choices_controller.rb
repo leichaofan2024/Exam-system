@@ -2,7 +2,6 @@ class ChoicesController < ApplicationController
     before_action :authenticate_user!, only: [:create]
 
     def index
-      @choices = Choice.all
       @exams = Exam.all
     end
 
@@ -16,13 +15,17 @@ class ChoicesController < ApplicationController
     end
 
     def edit
-      @choice = Choice.find(params[:id])
-      @exams = Exam.all
+      @exam = Exam.find(params[:id])
+      @choice = Choice.find_by(:exam_id => params[:id])
+      # if @choice.name = @exam.name
+      # @exams = Exam.all
     end
 
     def create
       @choice = Choice.new(choice_params)
+      @choice.exam_id = params[:exam_id]
       # @choice.user = is_admin
+
 
       if @choice.save
         redirect_to choice_path(@choice)
@@ -35,9 +38,26 @@ class ChoicesController < ApplicationController
     def update
       @choice = Choice.find(params[:id])
 
+      # if choice.is_aa1en == choice.exam.is_a1en
+      #   score += 1.25
+      # else
+      # end
+      #
+      # if choice.is_bb1en == choice.exam.is_b1en
+      #   score += 1.25
+      # else
+      # end
+      #
+      #
+      # @choice.score = score
+
+      # if choice.is_aa1en == choice.exam.is_a1en && choice.is_bb1en == choice.exam.is_b1en && choice.is_cc1en == choice.exam.is_c1en
+      #   score += 5
+      # else
+
 
       if @choice.update(choice_params)
-        redirect_to exams_path
+        redirect_to choices_path
       else
         render :edit
       end
@@ -120,7 +140,7 @@ class ChoicesController < ApplicationController
   end
 
   def choice_params
-    params.require(:choice).permit(:is_user,:name,:is_aa1en,:is_bb1en,:is_cc1en,:is_dd1en,:is_ee1en,:is_ff1en)
+    params.require(:choice).permit(:is_user,:name,:is_aa1en,:is_bb1en,:is_cc1en,:is_dd1en,:is_ee1en,:is_ff1en,:exam_id)
   end
 
 

@@ -1,5 +1,6 @@
 class Exam < ApplicationRecord
   belongs_to :category
+  has_many :choices
 
 
   has_many :photos
@@ -10,6 +11,7 @@ class Exam < ApplicationRecord
   validates :answer_1, presence: true
   validates :answer_2, presence: true
   validates :countdown, presence: true
+
 
   def a!
     self.is_a1en = false

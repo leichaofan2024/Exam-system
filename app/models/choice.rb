@@ -1,4 +1,5 @@
 class Choice < ApplicationRecord
+  belongs_to :exam
 
   def aa!
     self.is_aa1en = false
