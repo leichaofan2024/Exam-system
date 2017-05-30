@@ -24,7 +24,7 @@
 
             <li>
               <%= link_to products_path do %>
-                 <i class="fa fa-home fa-lg"></i>考试课程
+                 <i class="fa fa-home fa-lg"></i>题库中心
               <% end %>
             </li>
             <li>
@@ -55,7 +55,7 @@
                     </li>
                   <% end %>
                   <li>
-                    <%= link_to(content_tag(:i, " 我的课程", class: "fa fa-book"), account_orders_path) %>
+                    <%= link_to(content_tag(:i, " 我的题库", class: "fa fa-book"), account_orders_path) %>
                   </li>
                   <li>
                     <%= link_to(content_tag(:i, " 我的收藏", class: "fa fa-gratipay"), favorites_path ) %>
@@ -142,11 +142,9 @@
 <div id="service" class="row">
 
   <div class="module-name decorative">
-<<<<<<< HEAD
+
     <span>xxxxxxxxxx</span>
-=======
-    <span>铁路能帮您解决什么</span>
->>>>>>> c-choice-update
+
   </div>
 
   <div class="col-md-10 col-md-offset-1">
@@ -350,7 +348,10 @@
       <h4 align="center"; class="oblique">We have the perfect job to hire the solution, choose we equal to the choice of rest assured.</h4>
       <br />
       <br />
-        <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">了解更多</a></p>
+
+
+          <%= link_to( "开始考试" ,products_path, class: "btn btn-lg btn-info") %>
+
     </div>
 </div>
 </div>
