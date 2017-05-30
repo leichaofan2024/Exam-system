@@ -12,7 +12,6 @@
         <th>订购者</th>
         <th>订单状态</th>
         <th>管理</th>
-        <th>管理</th>
       </tr>
     </thead>
     <tbody>
@@ -28,12 +27,9 @@
           <td> <%= order.aasm_state %> </td>
           <td>
             <%if order.is_paid %>
-            <%= link_to("考试去", exams_path) %>
-            <% end %>
-          </td>
-          <td>
-            <%if order.is_paid %>
-            <%= link_to("choice去", choices_path) %>
+            <%= link_to("可以进入题库啦", choices_path) %>
+            <% else %>
+            付款后就可以进入题库练习喽
             <% end %>
           </td>
         </tr>

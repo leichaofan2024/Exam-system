@@ -30,47 +30,7 @@
           <br><br>
           <%= f.submit "Submit", class: "btn btn-default" %>
         </td>
-        <!-- <td>
-          <% if @choice.is_aa1en %>
-            <%= link_to aa_choice_path(@choice), method: :post, class: "btn btn-xs btn-success" do %>
-            <i class="fa fa-check"></i><% end %> A. <%= @exam.answer_1 %>
-          <% else %>
-            <%= link_to aa1_choice_path(@choice), method: :post, class: "btn btn-xs btn-warning" do %>
-            <i class="fa fa-square-o"></i><% end %> A. <%= @exam.answer_1 %>
-          <% end %>
-          <br><br>
 
-          <% if @choice.is_bb1en %>
-            <%= link_to bb_choice_path(@choice), method: :post, class: "btn btn-xs btn-success" do %>
-            <i class="fa fa-check"></i><% end %> B. <%= @exam.answer_3 %>
-          <% else %>
-            <%= link_to bb1_choice_path(@choice), method: :post, class: "btn btn-xs btn-warning" do %>
-            <i class="fa fa-square-o"></i><% end %> B. <%= @exam.answer_3 %>
-          <% end %>
-          <br><br>
-
-          <% if @choice.is_cc1en %>
-            <%= link_to cc_choice_path(@choice), method: :post, class: "btn btn-xs btn-success" do %>
-            <i class="fa fa-check"></i><% end %> C. <%= @exam.answer_3 %>
-          <% else %>
-            <%= link_to cc1_choice_path(@choice), method: :post, class: "btn btn-xs btn-warning" do %>
-            <i class="fa fa-square-o"></i><% end %> C. <%= @exam.answer_3 %>
-          <% end %>
-          <br><br>
-
-          <% if @choice.is_dd1en %>
-            <%= link_to cc_choice_path(@choice), method: :post, class: "btn btn-xs btn-success" do %>
-            <i class="fa fa-check"></i><% end %> D. <%= @exam.answer_4 %>
-          <% else %>
-            <%= link_to dd1_choice_path(@choice), method: :post, class: "btn btn-xs btn-warning" do %>
-            <i class="fa fa-square-o"></i><% end %> D. <%= @exam.answer_4 %>
-          <% end %>
-          <br><br>
-          <%= simple_form_for [@choice] do |f| %>
-          <%= f.submit "Submit", class: "btn btn-default" %>
-          <% end %>
-
-        </td> -->
         <td>
           <%= render_aa1_status(@choice) %> A.<%=  @exam.answer_1 %>
           <br><br>
@@ -92,22 +52,6 @@
 
 <hr>
 
-
-<!-- <div class="row">
-  <div class="col-md-6">
-    <% if @photos.present? %>
-      <% @photos.each_with_index do |p, index| %>
-        <% if index == 0 %>
-          <%= image_tag p.image.medium.url %>
-        <% else %>
-          <%= image_tag p.image.thumb.url %>
-        <% end %>
-      <% end %>
-    <% else %>
-      <h4>#</h4>
-    <% end %>
-  </div>
-</div> -->
 
    <div class="col-md-2 col-md-offset-10">
       <%= link_to(content_tag(:i, "继续答题", class: "fa fa-reply-all"), choices_path) %>
