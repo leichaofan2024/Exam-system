@@ -17,18 +17,18 @@ class ChoicesController < ApplicationController
     def edit
       @exam = Exam.find(params[:id])
       @choice = Choice.find_by(:exam_id => params[:id])
-      # if @choice.name = @exam.name
-      # @exams = Exam.all
+
     end
 
     def create
       @choice = Choice.new(choice_params)
       @choice.exam_id = params[:exam_id]
+
       # @choice.user = is_admin
 
 
       if @choice.save
-        redirect_to choice_path(@choice)
+        redirect_to admin_exams_path
       else
         render 'exams/option'
       end
@@ -38,10 +38,10 @@ class ChoicesController < ApplicationController
     def update
       @choice = Choice.find(params[:id])
 
-      # if choice.is_aa1en == choice.exam.is_a1en
-      #   score += 1.25
-      # else
-      # end
+      if choice.is_aa1en == choice.exam.is_a1en
+        score += 1.25
+      else
+      end
       #
       # if choice.is_bb1en == choice.exam.is_b1en
       #   score += 1.25
@@ -51,8 +51,8 @@ class ChoicesController < ApplicationController
       #
       # @choice.score = score
 
-      # if choice.is_aa1en == choice.exam.is_a1en && choice.is_bb1en == choice.exam.is_b1en && choice.is_cc1en == choice.exam.is_c1en && choice.is_dd1en == choice.exam.is_d1en
-      #   score += 25
+      # if @choice.is_aa1en == @choice.exam.is_a1en && @choice.is_bb1en == @choice.exam.is_b1en && @choice.is_cc1en == @choice.exam.is_c1en && @choice.is_dd1en == @choice.exam.is_d1en
+      #   @choice.score += 25
       # else
       # end
 

@@ -14,7 +14,6 @@
       <th>#</th>
       <th>问题</th>
       <th width="300"> 选项 </th>
-
       <th>管理</th>
     </tr>
   </thead>
@@ -41,7 +40,6 @@
          <% end %>
        </td>
 
-
          <td>
              <%= link_to("开始答题", edit_choice_path(exam)) %>
          </td>
@@ -51,5 +49,6 @@
      </tr>
    </tbody>
  </table>
-
- <%= link_to("交卷 ", exams_path(@exam),class: "btn btn-primary btn-sm") %>
+<div class="group pull-right">
+ <%= link_to("交卷 ", exams_path(@exam),class: "btn btn-primary btn-lg") %>
+ </div>

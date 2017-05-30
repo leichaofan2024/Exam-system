@@ -55,10 +55,16 @@
         <br><br>
         <%= render_d1_status(exam) %> D.<%= exam.answer_4 %>
       </td>
+      <%= choice.score %>
       <% end %>
       <% end %>
      </tr>
    </tbody>
  </table>
+<div class="group pull-right">
+<%= link_to("重新答题 ", choices_path,class: "btn btn-primary btn-sm") %>
+</div>
 
- <%= @choice.score %>
+<div class="group pull-left">
+<%= link_to("题库中心 ", products_path,class: "btn btn-primary btn-sm") %>
+</div>
