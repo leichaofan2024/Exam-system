@@ -1,13 +1,10 @@
 class AnswersController < ApplicationController
-  before_action :authenticate_user!
-  def index
-    @answers = Answer.all
+  def set_answer_status
+     @answer = Answer.new(question_id: params[:question_id], exam_id: params[:exam_id], is_correct: params[:is_correct])
 
+     @answer.save
+     redirect_to :back
   end
 
-  def show
-    @answer = Answer.find(params[:id])
-
-  end
 
 end

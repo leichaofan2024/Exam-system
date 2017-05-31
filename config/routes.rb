@@ -21,27 +21,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :exams do
-      member do
-          post :a
-          post :a1
-
-          post :b
-          post :b1
-
-          post :c
-          post :c1
-
-          post :d
-          post :d1
-
-          post :e
-          post :e1
-
-          post :f
-          post :f1
-      end
-    end
     resources :categories
     resources :products
     resources :posts
@@ -55,18 +34,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :answers do
-  post :ture_answer
-end
-
-resources :answers
-
-resources :exams do
-  collection do
-    post :option
-    post :check_answer
-  end
-end
 
   resources :carts do
     collection do
@@ -91,29 +58,18 @@ end
 
   resources :favorites
 
-  resources :choices do
+
+  resources :quizzes do
     member do
-        post :aa
-        post :aa1
-
-        post :bb
-        post :bb1
-
-        post :cc
-        post :cc1
-
-        post :dd
-        post :dd1
-
-        post :ee
-        post :ee1
-
-        post :ff
-        post :ff1
-      end
+      post :grade_exam
+    end
+    resources :questions
   end
 
   root "welcome#index"
 
   get 'about' => 'welcome#about'
+
+  post "set_answer_status", :to => "answers#set_answer_status"
+
 end
