@@ -5,7 +5,7 @@
       <th width="50">题号</th>
       <th width="200">题目</th>
       <th width="300">选项</th>
-      <th width="50">正确与否</th>
+
   </thead>
   <tbody>
     <% Question.all.each do |question| %>
@@ -44,20 +44,7 @@
             您还没有做选择
           <% end %>
         </td>
-        <td>
-          <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
-          <%if answer.present? %>
-            <% if (answer.is_aa1en == question.is_a1en) && (answer.is_bb1en == question.is_b1en) && (answer.is_cc1en == question.is_c1en) && (answer.is_dd1en == question.is_d1en) %>
 
-             正确
-
-            <% else %>
-              错误
-            <% end %>
-          <% else %>
-            您还没做选择
-          <% end %>
-        </td>
       </tr>
     <% end %>
   </tbody>
