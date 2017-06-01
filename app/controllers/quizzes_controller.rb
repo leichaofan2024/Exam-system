@@ -18,5 +18,11 @@ class QuizzesController < ApplicationController
     @answers = @exam.answers
   end
 
+  def exam_records
+    @quiz = Quiz.find(params[:id])
+    @questions = @quiz.questions
+    @exam = current_user.exams.last
+  end
+
 
 end

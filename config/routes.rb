@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :quizzes do
+      resources :questions
+    end
     resources :categories
     resources :products
     resources :posts
@@ -61,7 +64,7 @@ Rails.application.routes.draw do
 
   resources :quizzes do
     member do
-      post :grade_exam
+      post :exam_records
     end
     resources :questions
   end
@@ -70,6 +73,10 @@ Rails.application.routes.draw do
 
   get 'about' => 'welcome#about'
 
-  post "set_answer_status", :to => "answers#set_answer_status"
+  post "set_answer_1_status" => "answers#set_answer_1_status"
+  post "set_answer_2_status" => "answers#set_answer_2_status"
+  post "set_answer_3_status" => "answers#set_answer_3_status"
+  post "set_answer_4_status" => "answers#set_answer_4_status"
+
 
 end

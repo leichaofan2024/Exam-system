@@ -15,14 +15,14 @@ ActiveRecord::Schema.define(version: 20170531090952) do
   create_table "answers", force: :cascade do |t|
     t.integer  "exam_id"
     t.integer  "question_id"
-    t.boolean  "is_aa1en"
-    t.boolean  "is_bb1en"
-    t.boolean  "is_cc1en"
-    t.boolean  "is_dd1en"
-    t.boolean  "is_ee1en"
-    t.boolean  "is_ff1en"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "is_aa1en",    default: false
+    t.boolean  "is_bb1en",    default: false
+    t.boolean  "is_cc1en",    default: false
+    t.boolean  "is_dd1en",    default: false
+    t.boolean  "is_ee1en",    default: false
+    t.boolean  "is_ff1en",    default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "average_caches", force: :cascade do |t|
@@ -57,16 +57,16 @@ ActiveRecord::Schema.define(version: 20170531090952) do
   create_table "choices", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.boolean  "is_aa1en"
-    t.boolean  "is_bb1en"
-    t.boolean  "is_cc1en"
-    t.boolean  "is_dd1en"
-    t.boolean  "is_ee1en"
-    t.boolean  "is_ff1en"
+    t.boolean  "is_aa1en",   default: false
+    t.boolean  "is_bb1en",   default: false
+    t.boolean  "is_cc1en",   default: false
+    t.boolean  "is_dd1en",   default: false
+    t.boolean  "is_ee1en",   default: false
+    t.boolean  "is_ff1en",   default: false
     t.integer  "exam_id"
     t.float    "score"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "exams", force: :cascade do |t|
@@ -152,17 +152,22 @@ ActiveRecord::Schema.define(version: 20170531090952) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.text     "body"
-    t.text     "answer"
+    t.text     "content"
     t.integer  "quiz_id"
-    t.boolean  "is_a1en"
-    t.boolean  "is_b1en"
-    t.boolean  "is_c1en"
-    t.boolean  "is_d1en"
-    t.boolean  "is_e1en"
-    t.boolean  "is_f1en"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "answer_1"
+    t.string   "answer_2"
+    t.string   "answer_3"
+    t.string   "answer_4"
+    t.string   "answer_5"
+    t.string   "answer_6"
+    t.boolean  "is_a1en",    default: false
+    t.boolean  "is_b1en",    default: false
+    t.boolean  "is_c1en",    default: false
+    t.boolean  "is_d1en",    default: false
+    t.boolean  "is_e1en",    default: false
+    t.boolean  "is_f1en",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "quizzes", force: :cascade do |t|

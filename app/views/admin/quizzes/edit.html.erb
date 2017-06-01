@@ -1,0 +1,8 @@
+<div class="col-md-8 col-md-offset-2">
+  <h2 class="text-center">Edit a Quiz</h2>
+  <%= simple_form_for [:admin,@quiz] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+</div>

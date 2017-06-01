@@ -27,7 +27,7 @@
           <td> <%= order.aasm_state %> </td>
           <td>
             <%if order.is_paid %>
-            <%= link_to("可以进入题库啦", choices_path) %>
+            <%= link_to("可以进入题库啦", quizzes_path) %>
             <% else %>
             付款后就可以进入题库练习喽
             <% end %>

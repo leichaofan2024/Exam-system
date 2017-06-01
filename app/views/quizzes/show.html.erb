@@ -1,37 +1,69 @@
 
-<%= simple_form_for [@quiz,@question] do |f| %>
-  <%= f.input :body %>
-  <%= f.input :answer %>
-  <%= f.input :is_correct, as: :radio_buttons, :collection => [["正确",true], ["错误",false]]%>
-  <%= f.submit "创建题目"%>
-<% end %>
-<table class="table">
+
+<table class="table table-bordered">
   <thead>
-      <th>题号</th>
-      <th>题目</th>
-      <th>判断</th>
+      <th width="50">题号</th>
+      <th width="200">题目</th>
+      <th width="300">选项</th>
+      <th width="50">正确与否</th>
   </thead>
   <tbody>
     <% Question.all.each do |question| %>
       <tr>
         <td><%= question.id %></td>
-        <td><%= question.body %></td>
+        <td><%= question.content %></td>
         <td>
-          <% answer = @exam.answers.find { |a| a.exam_id == @exam.id && a.question_id == question.id }%>
+          <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
           <% if answer.present? %>
-            <% if answer.is_correct? %>
-              正确
+            <% if answer.is_aa1en %>
+              <%= link_to("A", set_answer_1_status_path(exam_id: @exam.id, question_id: question.id, is_aa1en: true),method: :post,class: "btn btn-success") %>  <%= question.answer_1%>
+            <% else %>
+              <%= link_to("A", set_answer_1_status_path(exam_id: @exam.id, question_id: question.id, is_aa1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_1%>
+            <% end %>
+              <br><br>
+            <% if answer.is_bb1en %>
+              <%= link_to("B", set_answer_2_status_path(exam_id: @exam.id, question_id: question.id, is_bb1en: true),method: :post,class: "btn btn-success") %>  <%= question.answer_2%>
+            <% else %>
+              <%= link_to("B", set_answer_2_status_path(exam_id: @exam.id, question_id: question.id, is_bb1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_2%>
+            <% end %>
+            <br><br>
+            <% if answer.is_cc1en %>
+              <%= link_to("C", set_answer_3_status_path(exam_id: @exam.id, question_id: question.id, is_cc1en: true),method: :post,class: "btn btn-success") %>  <%= question.answer_3%>
+            <% else %>
+              <%= link_to("C", set_answer_3_status_path(exam_id: @exam.id, question_id: question.id, is_cc1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_3%>
+            <% end %>
+
+            <br><br>
+            <% if answer.is_dd1en %>
+              <%= link_to("D", set_answer_4_status_path(exam_id: @exam.id, question_id: question.id, is_dd1en: true),method: :post,class: "btn btn-success") %>  <%= question.answer_4%>
+            <% else %>
+              <%= link_to("D", set_answer_4_status_path(exam_id: @exam.id, question_id: question.id, is_dd1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_4%>
+            <% end %>
+            <% else %>
+
+            您还没有做选择
+          <% end %>
+        </td>
+        <td>
+          <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
+          <%if answer.present? %>
+            <% if (answer.is_aa1en == question.is_a1en) && (answer.is_bb1en == question.is_b1en) && (answer.is_cc1en == question.is_c1en) && (answer.is_dd1en == question.is_d1en) %>
+
+             正确
+
             <% else %>
               错误
             <% end %>
           <% else %>
-            <%= link_to("正确", set_answer_status_path(exam_id: @exam.id, question_id: question.id, is_correct: true),method: :post,class: "btn btn-info") %>
-            <%= link_to("错误", set_answer_status_path(exam_id: @exam.id, question_id: question.id, is_correct: false),method: :post,class: "btn btn-danger") %>
+            您还没做选择
           <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<hr>
 
-<%= total_count(@answers) %>
+<div class="text-center" >
+  <%= link_to("交卷", exam_records_quiz_path(@quiz),method: :post,  class: "btn btn-primary btn-lg") %>
+</div>
