@@ -14,6 +14,7 @@ class Admin::QuizzesController < ApplicationController
 
   def create
     @quiz = Quiz.new(quiz_params)
+
     if @quiz.save
       redirect_to admin_quizzes_path
     else
