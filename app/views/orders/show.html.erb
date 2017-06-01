@@ -1,5 +1,5 @@
 
-<%= render "common/flashes" %>
+
 <div class="row order-page">
   <div class="col-md-8 col-md-offset-2">
     <div class="column-labels">
@@ -55,7 +55,7 @@
 
       <div class="pull-right">
         <% if  @order.paid? %>
-          <%= link_to("可以答题啦", choices_path,  class: "btn  btn-info") %>
+          <%= link_to("可以答题啦", quizzes_path,  class: "btn  btn-info") %>
         <% else %>
         <h4>付款后才可以答题哦</h4>
         <% end %>

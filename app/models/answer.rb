@@ -1,4 +1,4 @@
 class Answer < ApplicationRecord
-
-  validates :true_answer, presence: true
+  belongs_to :exam
+  belongs_to :question
 end

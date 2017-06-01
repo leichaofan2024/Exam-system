@@ -1,0 +1,18 @@
+<div class="admin-quizs-page">
+  <div class="pull-right">
+    <%= link_to("新增试卷", new_admin_quiz_path, class: "btn btn-default") %>
+  </div>
+  <h3 class="text-center">新增试卷</h3>
+  <hr>
+  <div class="row">
+    <% @quizzes.each do |quiz| %>
+    <div class="col-md-6 product-chunk">
+      <div class="col-md-6 chunk-right">
+        <p><%= link_to quiz.title,admin_quiz_path(quiz) %>
+        <%= link_to("Edit", edit_admin_quiz_path(quiz)) %> |
+        <%= link_to("Destroy", admin_quiz_path(quiz), method: :delete, data: { confirm: "Are your sure?" }) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

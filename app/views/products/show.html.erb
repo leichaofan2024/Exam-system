@@ -1,7 +1,7 @@
 <div class="show-page">
   <%= render "common/flashes" %>
   <div class="show-option">
-     <span>所有商品</span>  >   <%= link_to(@product.category.name, products_path(category: @product.category.name)) %>
+     <span>所有商品</span>    <%= link_to(@product.category.name, products_path(category: @product.category.name)) %>
      <span class="pull-right"><%= link_to("返回", url_for(:back)) %></span>
    </div>
   <!-- Start of product card -->
