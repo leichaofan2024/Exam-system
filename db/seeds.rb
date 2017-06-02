@@ -33,7 +33,7 @@ create_quizzes =
 
 end
 
-for i in 1..54
+
 
 create_questions =
   Question.create!([content: "1+1=？",answer_1:"2", answer_2:"1",answer_3:"3",answer_4:"4" ,
