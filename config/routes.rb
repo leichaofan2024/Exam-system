@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       post :instant_buy
     end
     collection do
+      get :my_course
       get :search
     end
     resources :reviews, only: [:new, :create]

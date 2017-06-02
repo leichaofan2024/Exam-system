@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
       end
       @product_lists = p.flatten!
     end
-    
+
     @photos = @product.photos.all
     @reviews = Review.where(product_id: @product.id).order("created_at DESC")
     @review = Review.new
@@ -90,7 +90,16 @@ class ProductsController < ApplicationController
     flash[:notice] = "您已取消收藏宝贝"
 		redirect_to :back
 	end
-
+  def my_course
+    @order = Order.find(params[:order_id])
+    @product_lists = @order.product_lists
+    p = Array.new
+    @product_lists.each do |product_list|
+      n = product_list.product_name
+      p << Product.find_by(title: n)
+    end
+    @products = p
+  end
   protected
 
   def validate_search_key
