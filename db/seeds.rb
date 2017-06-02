@@ -19,8 +19,18 @@ Category.create(name: "四川省")
 Category.create(name: "上海市")
 Category.create(name: "江苏省")
 
+for i in 1..6 do
 
+Product.create!(title:"数学卷",quantity:100,price:2,category_id: i
+image: open("http://img1.meichubang.com/pic/201502/02/9d4d22222cf573a3dd4bbf5f112e5513.jpg"))
 
+Product.create!(title:"语文卷",quantity:100,price:3,category_id: i
+image: open("http://img1.meichubang.com/pic/201502/02/9d4d22222cf573a3dd4bbf5f112e5513.jpg"))
+
+Product.create!(title:"英语卷",quantity:100,price:5,category_id: i
+image: open("http://img1.meichubang.com/pic/201502/02/9d4d22222cf573a3dd4bbf5f112e5513.jpg"))
+
+end
 
 for i in 1..18
   Quiz.create!([title: "2017年考题",description:"2017年高考选择题", product_id: i])
@@ -34,7 +44,7 @@ create_quizzes =
 end
 
 
-for i in 1..18 do
+for i in 1..25 do
 create_questions =
   Question.create!([content: "1+1=？",answer_1:"2", answer_2:"1",answer_3:"3",answer_4:"4" ,
     quiz_id: i, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false])
@@ -50,7 +60,9 @@ create_questions =
 create_questions =
   Question.create!([content: "false怎么读？",answer_1:"不会", answer_2:"没答案",answer_3:"乱写的",answer_4:"问google",
      quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
+end
 
+for i in 26..54 do 
 create_questions =
  Question.create!([content: "1+3=？",answer_1:"1", answer_2:"2",answer_3:"4",answer_4:"5",
     quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
@@ -67,4 +79,4 @@ create_questions =
 create_questions =
   Question.create!([content: "努力学习？",answer_1:"规范一", answer_2:"规范二",answer_3:"规范三",answer_4:"规范四",
     quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false])
-end 
+end
