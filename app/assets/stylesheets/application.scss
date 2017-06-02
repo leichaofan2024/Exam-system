@@ -243,9 +243,46 @@ div.alert {
 
 
 //-----part 2----------
+//---- 新 ---
+
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.text-primary {
+    color: inherit;
+}
+.landing-page section p {
+    color: #aeaeae;
+    font-size: 13px;
+}
+p {
+    margin: 0 0 10px;
+}
+.m-t-lg {
+    margin-top: 30px;
+}
+.m-t-xl {
+    margin-top: 40px;
+}
+.landing-page .features-icon {
+    color: #1ab394;
+    font-size: 40px;
+}
+.landing-page .features h2 {
+    font-size: 18px;
+    margin-top: 5px;
+}
+//------end 新 ------
+
 .part2 {
   background-color: #ffffff;
-  height: auto;
+  height: 800px;
   margin: -30px -20px;
 }
 
@@ -254,7 +291,7 @@ h2.section-title {
   margin-top: 10px;
   margin-bottom: 30px;
   font-size: 24px;
-  font-weight: 700
+  font-weight: 700;
 }
 .talk-about-us {
   padding-bottom: 160px;
@@ -269,9 +306,8 @@ h2.section-title {
   font-style: italic
 }
 
-.talk-about-us .item>img {
-  width: 150px;
-  height: 80px;
+.arousel-inner .item>img {
+  height: 50%;
   margin: 0 auto;
   border-radius: 10px;
   border: 2px solid #ccc;
