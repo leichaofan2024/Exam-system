@@ -3,6 +3,7 @@
   <%= simple_form_for [:admin,@quiz] do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
+    <%= f.select :product_id,@products %>
     <%= f.submit "Submit", class: "btn btn-default" %>
   <% end %>
 </div>

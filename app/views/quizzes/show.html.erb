@@ -1,18 +1,17 @@
-
+<h3>我的《<%= @quiz.title %>》考卷</h3>
 
 <table class="table table-bordered">
   <thead>
       <th width="50">题号</th>
       <th width="200">题目</th>
       <th width="300">选项</th>
-
   </thead>
   <tbody>
-    <% Question.all.each do |question| %>
+    <% @questions.each do |question| %>
       <tr>
-        <td><%= question.id %></td>
+        <td><%= (question.id+1-@questions.first.id)  %></td>
         <td><%= question.content %></td>
-        <td>
+        <td class="button-style">
           <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
           <% if answer.present? %>
             <% if answer.is_aa1en %>
@@ -39,9 +38,12 @@
             <% else %>
               <%= link_to("D", set_answer_4_status_path(exam_id: @exam.id, question_id: question.id, is_dd1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_4%>
             <% end %>
-            <% else %>
 
-            您还没有做选择
+          <% else %>
+            <%= link_to("A", set_answer_1_status_path(exam_id: @exam.id, question_id: question.id, is_aa1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_1%><br><br>
+            <%= link_to("B", set_answer_2_status_path(exam_id: @exam.id, question_id: question.id, is_bb1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_2%><br><br>
+            <%= link_to("C", set_answer_3_status_path(exam_id: @exam.id, question_id: question.id, is_cc1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_3%><br><br>
+            <%= link_to("D", set_answer_4_status_path(exam_id: @exam.id, question_id: question.id, is_dd1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_4%><br><br>
           <% end %>
         </td>
 

@@ -10,6 +10,7 @@ class Admin::QuizzesController < ApplicationController
 
   def new
     @quiz =Quiz.new
+    @products = Product.all.map{|a| [a.title,a.id]}
   end
 
   def create
@@ -21,6 +22,17 @@ class Admin::QuizzesController < ApplicationController
       render :new
     end
   end
+  def edit
+    @products = Product.all.map{|a| [a.title,a.id]}
+    @quiz = Quiz.find(params[:id])
+  end
+
+  def update
+    @quiz = Quiz.find(params[:id])
+    @quiz.update(quiz_params)
+    redirect_to admin_quizzes_path
+  end
+
 
   def destroy
     @quiz = Quiz.find(params[:id])
@@ -31,7 +43,7 @@ class Admin::QuizzesController < ApplicationController
   private
 
   def quiz_params
-    params.require(:quiz).permit(:title, :decription)
+    params.require(:quiz).permit(:title, :description,:product_id )
   end
 
 end

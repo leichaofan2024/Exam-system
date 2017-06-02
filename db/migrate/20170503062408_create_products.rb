@@ -8,7 +8,6 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.string :size
       t.integer :category_id
       t.string :image
-
       t.timestamps
     end
   end

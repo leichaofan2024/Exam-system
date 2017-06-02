@@ -173,6 +173,7 @@ ActiveRecord::Schema.define(version: 20170531090952) do
   create_table "quizzes", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "product_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

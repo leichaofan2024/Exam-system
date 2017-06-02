@@ -22,6 +22,16 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    if current_user
+      @orders = current_user.orders.where(is_paid: true)
+
+      p = Array.new
+      @orders.each do |order|
+      p << order.product_lists
+      end
+      @product_lists = p.flatten!
+    end
+    
     @photos = @product.photos.all
     @reviews = Review.where(product_id: @product.id).order("created_at DESC")
     @review = Review.new
