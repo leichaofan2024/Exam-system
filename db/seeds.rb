@@ -21,18 +21,18 @@ Category.create(name: "江苏省")
 
 for i in 1..6 do
 
-Product.create!(title:"数学卷",quantity:100,price:2,category_id: i
+Product.create!(title:"数学卷",description:"历年数学选择题",size:1,quantity:100,price:2,category_id: i
 image: open("http://img1.meichubang.com/pic/201502/02/9d4d22222cf573a3dd4bbf5f112e5513.jpg"))
 
-Product.create!(title:"语文卷",quantity:100,price:3,category_id: i
+Product.create!(title:"语文卷",description:"历年语文选择题",size:1,quantity:100,price:3,category_id: i
 image: open("http://img1.meichubang.com/pic/201502/02/9d4d22222cf573a3dd4bbf5f112e5513.jpg"))
 
-Product.create!(title:"英语卷",quantity:100,price:5,category_id: i
+Product.create!(title:"英语卷",description:"历年英语选择题",size:1,quantity:100,price:5,category_id: i
 image: open("http://img1.meichubang.com/pic/201502/02/9d4d22222cf573a3dd4bbf5f112e5513.jpg"))
 
 end
 
-for i in 1..18
+for i in 1..18 do
   Quiz.create!([title: "2017年考题",description:"2017年高考选择题", product_id: i])
 
 create_quizzes =
@@ -62,7 +62,7 @@ create_questions =
      quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
 end
 
-for i in 26..54 do 
+for i in 26..54 do
 create_questions =
  Question.create!([content: "1+3=？",answer_1:"1", answer_2:"2",answer_3:"4",answer_4:"5",
     quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
