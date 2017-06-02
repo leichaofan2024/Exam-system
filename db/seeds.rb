@@ -27,11 +27,11 @@ Product.create!(title:"语文卷",description:"历年语文选择题",size:1,qua
 
 Product.create!(title:"英语卷",description:"历年英语选择题",size:1,quantity:100,price:5,category_id: i)
 
-Product.create!(title:"物理卷",description:"历年英语选择题",size:1,quantity:100,price:5,category_id: i)
+Product.create!(title:"物理卷",description:"历年英语选择题",size:1,quantity:100,price:0.99,category_id: i)
 
-Product.create!(title:"化学卷",description:"历年英语选择题",size:1,quantity:100,price:5,category_id: i)
+Product.create!(title:"化学卷",description:"历年英语选择题",size:1,quantity:100,price:0.99,category_id: i)
 
-Product.create!(title:"政治卷",description:"历年英语选择题",size:1,quantity:100,price:5,category_id: i)
+Product.create!(title:"政治卷",description:"历年英语选择题",size:1,quantity:100,price:0.99,category_id: i)
 
 
 end
