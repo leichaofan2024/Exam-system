@@ -13,11 +13,11 @@ u.is_admin = true
 u.save
 
 Category.create(name: "全国卷")
-Category.create(name: "山东省")
-Category.create(name: "北京市")
-Category.create(name: "四川省")
-Category.create(name: "上海市")
-Category.create(name: "江苏省")
+Category.create(name: "山东卷")
+Category.create(name: "北京卷")
+Category.create(name: "四川卷")
+Category.create(name: "上海卷")
+Category.create(name: "江苏卷")
 
 for i in 1..6 do
 
