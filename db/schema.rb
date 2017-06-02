@@ -54,21 +54,6 @@ ActiveRecord::Schema.define(version: 20170531090952) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "choices", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "name"
-    t.boolean  "is_aa1en",   default: false
-    t.boolean  "is_bb1en",   default: false
-    t.boolean  "is_cc1en",   default: false
-    t.boolean  "is_dd1en",   default: false
-    t.boolean  "is_ee1en",   default: false
-    t.boolean  "is_ff1en",   default: false
-    t.integer  "exam_id"
-    t.float    "score"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
   create_table "exams", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "quiz_id"

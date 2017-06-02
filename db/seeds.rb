@@ -12,48 +12,101 @@ u.password_confirmation = "123456"
 u.is_admin = true
 u.save
 
-Category.create(name: "远动调度")
-Category.create(name: "电力调度")
-Category.create(name: "继电保护")
+Category.create(name: "全国卷")
+Category.create(name: "山东省")
+Category.create(name: "北京市")
+Category.create(name: "四川省")
+Category.create(name: "上海市")
+Category.create(name: "江苏省")
+
+
+
+
+for i in 1..18
+  Quiz.create!([title: "2017年考题",description:"2017年高考选择题", product_id: i])
 
 create_quizzes =
-  Quiz.create!([title: "电力调度",description:"步骤一", product_id: 1])
+    Quiz.create!([title: "2016年考题",description:"2016年高考选择题", product_id: i])
 
 create_quizzes =
-    Quiz.create!([title: "远动调度",description:"远动调度测试题", product_id: 2])
+    Quiz.create!([title: "2015年考题",description:"2015年高考选择题", product_id: i])
 
-    create_quizzes =
-        Quiz.create!([title: "继电保护",description:"继电保护测试题", product_id: 3])
+end
+
+for i in 1..54
 
 create_questions =
-  Question.create!([content: "接触网断电操作步骤？",answer_1:"步骤一", answer_2:"步骤二",answer_3:"步骤三",answer_4:"步骤四" ,
+  Question.create!([content: "1+1=？",answer_1:"2", answer_2:"1",answer_3:"3",answer_4:"4" ,
     quiz_id: 1, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false])
 
 create_questions =
-  Question.create!([content: "继电器保护装置种类？",answer_1:"第一类", answer_2:"第二类",answer_3:"第三类",answer_4:"第四类",
+  Question.create!([content: "category什么意思？",answer_1:"类", answer_2:"类别",answer_3:"不知道",answer_4:"好",
     quiz_id: 1, is_a1en: false ,is_b1en: true,is_c1en: false,is_d1en: false])
 
 create_questions =
-  Question.create!([content: "SCADA作业规范？",answer_1:"规范一", answer_2:"规范二",answer_3:"规范三",answer_4:"规范四",
+  Question.create!([content: "要如何背单词？",answer_1:"背诵", answer_2:"书写",answer_3:"默念",answer_4:"hello",
     quiz_id: 1, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false])
 
 create_questions =
-  Question.create!([content: "长春属于哪个铁路总局？",answer_1:"长春铁路总局", answer_2:"北京铁路总局",answer_3:"黑龙江铁路总局",answer_4:"沈阳铁路总局",
+  Question.create!([content: "false怎么读？",answer_1:"不会", answer_2:"没答案",answer_3:"乱写的",answer_4:"问google",
      quiz_id: 1, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
 
 create_questions =
- Question.create!([content: "长春属于哪个铁路总局？",answer_1:"长春铁路总局", answer_2:"北京铁路总局",answer_3:"黑龙江铁路总局",answer_4:"沈阳铁路总局",
-    quiz_id: 2, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
+ Question.create!([content: "1+3=？",answer_1:"1", answer_2:"2",answer_3:"4",answer_4:"5",
+    quiz_id: 1, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
 
 create_questions =
-  Question.create!([content: "接触网断电操作步骤？",answer_1:"步骤一", answer_2:"步骤二",answer_3:"步骤三",answer_4:"步骤四" ,
-    quiz_id: 2, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false])
+  Question.create!([content: "你好用英语怎么说",answer_1:"hello", answer_2:"hi",answer_3:"good",answer_4:"fine" ,
+    quiz_id: 1, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false])
 
 
 create_questions =
-  Question.create!([content: "继电器保护装置种类？",answer_1:"第一类", answer_2:"第二类",answer_3:"第三类",answer_4:"第四类",
-    quiz_id: 3, is_a1en: false ,is_b1en: true,is_c1en: false,is_d1en: false])
+  Question.create!([content: "乱写的题目？",answer_1:"第一类", answer_2:"第二类",answer_3:"第三类",answer_4:"第四类",
+    quiz_id: 1, is_a1en: false ,is_b1en: true,is_c1en: false,is_d1en: false])
 
 create_questions =
-  Question.create!([content: "SCADA作业规范？",answer_1:"规范一", answer_2:"规范二",answer_3:"规范三",answer_4:"规范四",
-    quiz_id: 3, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false])
+  Question.create!([content: "努力学习？",answer_1:"规范一", answer_2:"规范二",answer_3:"规范三",answer_4:"规范四",
+    quiz_id: 1, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false])
+
+
+
+    create_questions =
+      Question.create!([content: "false怎么读？",answer_1:"不会", answer_2:"没答案",answer_3:"乱写的",answer_4:"问google",
+         quiz_id: 2, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
+
+    create_questions =
+     Question.create!([content: "1+3=？",answer_1:"1", answer_2:"2",answer_3:"4",answer_4:"5",
+        quiz_id: 2, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
+
+    create_questions =
+      Question.create!([content: "你好用英语怎么说",answer_1:"hello", answer_2:"hi",answer_3:"good",answer_4:"fine" ,
+        quiz_id: 2, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false])
+
+
+    create_questions =
+      Question.create!([content: "乱写的题目？",answer_1:"第一类", answer_2:"第二类",answer_3:"第三类",answer_4:"第四类",
+        quiz_id: 2, is_a1en: false ,is_b1en: true,is_c1en: false,is_d1en: false])
+
+    create_questions =
+      Question.create!([content: "努力学习？",answer_1:"规范一", answer_2:"规范二",answer_3:"规范三",answer_4:"规范四",
+        quiz_id: 2, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false])
+
+        create_questions =
+          Question.create!([content: "1+1=？",answer_1:"2", answer_2:"1",answer_3:"3",answer_4:"4" ,
+            quiz_id: 3, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false])
+
+        create_questions =
+          Question.create!([content: "category什么意思？",answer_1:"类", answer_2:"类别",answer_3:"不知道",answer_4:"好",
+            quiz_id: 3, is_a1en: false ,is_b1en: true,is_c1en: false,is_d1en: false])
+
+        create_questions =
+          Question.create!([content: "要如何背单词？",answer_1:"背诵", answer_2:"书写",answer_3:"默念",answer_4:"hello",
+            quiz_id: 3, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false])
+
+        create_questions =
+          Question.create!([content: "false怎么读？",answer_1:"不会", answer_2:"没答案",answer_3:"乱写的",answer_4:"问google",
+             quiz_id: 3, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
+
+        create_questions =
+         Question.create!([content: "1+3=？",answer_1:"1", answer_2:"2",answer_3:"4",answer_4:"5",
+            quiz_id: 3, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
