@@ -80,8 +80,26 @@
 <!---  end ----->
 
 <!--- 首页动图 ----->
-<div class="header_placeholder h80"></div>
- <div class="banner-v2">
+
+ <div class="banner-v2" >
+   <div class="banner-detail">
+     <!-- <h2 class="banner-logo ">
+
+     </h2> -->
+     <div  class="banner-slogan">
+       <h1>
+
+
+       <p><span class="sub-slogan"> 铁路 </span>————铁路在线培训系统</br><br> </p>
+       </h1>
+
+
+     </div>
+     <div class="welcome-button">
+         <%= link_to(content_tag(:i, '开始学习', class: 'fa fa-hand-o-right'), products_path,  class: "btn btn-primary-welcome") %>
+      </div>
+     </div>
+
   <div class="banner-img">
     <div id="myCarousel" class="carousel slide">
       <ol class="carousel-indicators">
@@ -112,23 +130,8 @@
     </div>
   </div>
 
-<div class="banner-detail">
-  <!-- <h2 class="banner-logo ">
-
-  </h2> -->
-  <div  class="banner-slogan">
-    <h1>
-      <span class="sub-slogan"> 铁路 </span>
-
-    </br></br><p>————铁路在线考试系统</br><br> </p>
-    </h1>
 
 
-  </div>
-  <div class="welcome-button">
-      <%= link_to(content_tag(:i, '开始学习', class: 'fa fa-hand-o-right'), products_path,  class: "btn btn-primary-welcome") %>
-   </div>
-  </div>
 </div>
 
 
@@ -136,61 +139,6 @@
 
 
 
-
-<!-- our service and -->
-
-<div id="service" class="row">
-
-  <div class="module-name decorative">
-
-    <span>xxxxxxxxxx</span>
-
-  </div>
-
-  <div class="col-md-10 col-md-offset-1">
-    <div class="row">
-      <div class="col-md-4 ">
-        <div class="service-item-img text-center">
-          <img src="http://ww2.sinaimg.cn/large/006tNc79ly1fft5c9piyaj30hs0dtjsm.jpg" class="round-image-160">
-        </div>
-
-        <div class="service-info text-center">
-          <h4>xxx</h4><br />
-          <p>xxxxxxxxxxxxx</p>
-          <p>xxxxxxxxxxxxxxx </p>
-        </div>
-     </div>
-
-      <div class="col-md-4">
-        <div class="service-item-img text-center">
-          <img src="http://ww4.sinaimg.cn/large/006tNc79ly1fft5ccfugwj30hs0g9aao.jpg" class="round-image-160">
-        </div>
-
-        <div class="service-info text-center">
-          <h4>xxxxxxxx</h4><br />
-          <p>xxxxxxxxxxxxxxxx</p>
-          <p>xxxxxxxxxxxxxxxx</p>
-        </div>
-
-      </div>
-      <div class="col-md-4">
-        <div class="service-item-img text-center">
-          <img src="http://ww4.sinaimg.cn/large/006tNc79ly1fft5cf6lmzj30hs0dc0t5.jpg" class="round-image-160">
-        </div>
-
-        <div class="service-info text-center">
-          <h4>xxxxxxxxx</h4><br />
-          <p>xxxxxxxxxxxxxxx</p>
-          <p>xxxxxxxxxxxxxxxx</p>
-        </div>
-
-    </div>
-  </div>
-
-</div>
-</div>
-
-<!-- end of our service -->
 
 
 
@@ -207,13 +155,15 @@
       <h2>试题分类</h2>
     </div>
     <div class="feature-block">
-      <a href="http://localhost:3000/jobs/8">
-      <img id="trip1" src="https://ws2.sinaimg.cn/large/006tNc79ly1ffz3406emcj30sg0izabi.jpg">
-      </a>
-      <br>
-      <a href="http://localhost:3000/jobs/8">
-      <h3>XXXXXXXX</h3>
-      </a>
+      <%= %>
+        <a href="#">
+        <img id="trip1" src="https://ws2.sinaimg.cn/large/006tNc79ly1ffz3406emcj30sg0izabi.jpg">
+        </a>
+        <br>
+        <a href="#">
+        <h3>XXXXXXXX</h3>
+        </a>
+
     </div>
     <div class="feature-block">
       <a href="http://localhost:3000/jobs/6">
@@ -346,8 +296,8 @@
   <div class="content-3">
     <div class="feature-title">
       <h4 align="center"; class="oblique">We have the perfect job to hire the solution, choose we equal to the choice of rest assured.</h4>
-      <br />
-      <br />
+      <br/>
+      <br/>
 
 
           <%= link_to( "开始学习" ,products_path, class: "btn btn-lg btn-info") %>

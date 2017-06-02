@@ -326,9 +326,10 @@ h2.section-title {
 .carousel-inner>.item>img,.carousel-inner>.item>a>img {
   display: block;
   max-width: 100%;
-  height: auto;
-  line-height: 1
+  height: 600px;
+  line-height: 1;
 }
+
 
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel-inner>.item {
