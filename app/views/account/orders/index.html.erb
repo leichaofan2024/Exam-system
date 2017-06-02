@@ -27,7 +27,7 @@
           <td> <%= order.aasm_state %> </td>
           <td>
             <%if order.is_paid %>
-            <%= link_to("可以进入题库啦", my_course_products_path(order_id: order.id)) %>
+            <%= link_to("可以进入题库啦", my_course_products_path) %>
             <% else %>
             <%= link_to("付款后就可以进入题库练习喽", order_path(order.token))%>
             <% end %>

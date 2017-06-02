@@ -91,12 +91,14 @@ class ProductsController < ApplicationController
 		redirect_to :back
 	end
   def my_course
-    @order = Order.find(params[:order_id])
-    @product_lists = @order.product_lists
+    @orders = current_user.orders.where(is_paid: true)
     p = Array.new
-    @product_lists.each do |product_list|
-      n = product_list.product_name
-      p << Product.find_by(title: n)
+   @orders.each do |order|
+      @product_lists = order.product_lists
+      @product_lists.each do |product_list|
+        n = product_list.product_name
+        p << Product.find_by(title: n)
+      end
     end
     @products = p
   end
