@@ -21,14 +21,11 @@ Category.create(name: "江苏省")
 
 for i in 1..6 do
 
-Product.create!(title:"数学卷",description:"历年数学选择题",size:1,quantity:100,price:2,category_id: i
-image: open("https://ws3.sinaimg.cn/large/006tKfTcly1fftx744bhij31hc0zk111.jpg"))
+Product.create!(title:"数学卷",description:"历年数学选择题",size:1,quantity:100,price:2,category_id: i)
 
-Product.create!(title:"语文卷",description:"历年语文选择题",size:1,quantity:100,price:3,category_id: i
-image: open("https://ws3.sinaimg.cn/large/006tKfTcly1fftx744bhij31hc0zk111.jpg"))
+Product.create!(title:"语文卷",description:"历年语文选择题",size:1,quantity:100,price:3,category_id: i)
 
-Product.create!(title:"英语卷",description:"历年英语选择题",size:1,quantity:100,price:5,category_id: i
-image: open("https://ws3.sinaimg.cn/large/006tKfTcly1fftx744bhij31hc0zk111.jpg"))
+Product.create!(title:"英语卷",description:"历年英语选择题",size:1,quantity:100,price:5,category_id: i)
 
 end
 
