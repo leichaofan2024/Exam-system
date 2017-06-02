@@ -6,7 +6,7 @@
     <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
     <%if answer.present? %>
       <% if (answer.is_aa1en == question.is_a1en) && (answer.is_bb1en == question.is_b1en) && (answer.is_cc1en == question.is_c1en) && (answer.is_dd1en == question.is_d1en) %>
-        <% sum += 1 %>
+        <% sum += 25 %>
       <% end %>
     <% end %>
   <% end %>
@@ -41,7 +41,7 @@
 
         <td><%= question.content %></td>
         <td>
-          <%= @exam.quiz_id %>
+
           <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
           <% if answer.present? %>
             <% if answer.is_aa1en %>
