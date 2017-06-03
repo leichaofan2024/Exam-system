@@ -5,7 +5,7 @@
     <thead>
         <th width= "15%">题号</th>
         <th width="30%">题目</th>
-        <th colspan= "2" width="30%">选项</th>
+        <th  width="50%">选项</th>
     </thead>
     <tbody>
       <% @questions.each do |question| %>
@@ -47,29 +47,7 @@
               <%= link_to("D", set_answer_4_status_path(exam_id: @exam.id, question_id: question.id, is_dd1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_4%><br><br>
             <% end %>
           </td>
-          <td>
-
-            A.<%= question.answer_1 %>
-                <% if question.imagea.present? %>
-                 <%= image_tag(question.imagea.url) %>
-                <% end %>
-            <br><br>
-            B.<%= question.answer_2 %>
-                <% if question.imageb.present? %>
-                 <%= image_tag(question.imageb.url) %>
-                <% end %>
-            <br><br>
-            C.<%= question.answer_3 %>
-                <% if question.imagec.present? %>
-                 <%= image_tag(question.imagec.url) %>
-                <% end %>
-            <br><br>
-            D.<%= question.answer_4 %>
-                <% if question.imaged.present? %>
-                 <%= image_tag(question.imaged.url) %>
-                <% end %>
-
-          </td>
+  
 
         </tr>
       <% end %>
