@@ -145,6 +145,12 @@ ActiveRecord::Schema.define(version: 20170531090952) do
     t.string   "answer_4"
     t.string   "answer_5"
     t.string   "answer_6"
+    t.string   "imagea"
+    t.string   "imageb"
+    t.string   "imagec"
+    t.string   "imaged"
+    t.string   "imagee"
+    t.string   "imagef"
     t.boolean  "is_a1en",    default: false
     t.boolean  "is_b1en",    default: false
     t.boolean  "is_c1en",    default: false

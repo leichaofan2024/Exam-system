@@ -1,96 +1,99 @@
-<h3>考试成绩单</h3>
+<div class= "col-md-8 col-md-offset-2">
+  <h3>考试成绩单</h3>
 
-<div class="" style = "text-decoration:underline">
-  <% sum = 0 %>
-  <% @questions.each do |question| %>
-    <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
-    <%if answer.present? %>
-      <% if (answer.is_aa1en == question.is_a1en) && (answer.is_bb1en == question.is_b1en) && (answer.is_cc1en == question.is_c1en) && (answer.is_dd1en == question.is_d1en) %>
-        <% sum += 25 %>
+  <div class="" style = "text-decoration:underline">
+    <% sum = 0 %>
+    <% @questions.each do |question| %>
+      <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
+      <%if answer.present? %>
+        <% if (answer.is_aa1en == question.is_a1en) && (answer.is_bb1en == question.is_b1en) && (answer.is_cc1en == question.is_c1en) && (answer.is_dd1en == question.is_d1en) %>
+          <% sum += 25 %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-  <h4> 考试得分：<%= sum %> </h4>
-</div>
-<br>
+    <h4> 考试得分：<%= sum %> </h4>
+  </div>
+  <br>
 
-<table class="table table-bordered">
-  <thead>
-      <th width="50">题号</th>
-      <th width="50">正确与否</th>
-      <th width="300">题干</th>
-      <th width="300">考生答案</th>
-      <th width="50">正确答案</th>
-  </thead>
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.id %></td>
-        <td>
-          <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
-          <%if answer.present? %>
-            <% if (answer.is_aa1en == question.is_a1en) && (answer.is_bb1en == question.is_b1en) && (answer.is_cc1en == question.is_c1en) && (answer.is_dd1en == question.is_d1en) %>
-              <i class= "fa fa-check"></i>
+  <table class="table table-bordered">
+    <thead>
+        <th width="50">题号</th>
+        <th width="50">正确与否</th>
+        <th width="300">题干</th>
+        <th width="300">考生答案</th>
+        <th width="50">正确答案</th>
+    </thead>
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.id %></td>
+          <td>
+            <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
+            <%if answer.present? %>
+              <% if (answer.is_aa1en == question.is_a1en) && (answer.is_bb1en == question.is_b1en) && (answer.is_cc1en == question.is_c1en) && (answer.is_dd1en == question.is_d1en) %>
+                <i class= "fa fa-check"></i>
+              <% else %>
+                <i class= "fa fa-close"></i>
+              <% end %>
             <% else %>
-              <i class= "fa fa-close"></i>
+              您还没做选择
             <% end %>
-          <% else %>
-            您还没做选择
-          <% end %>
-        </td>
+          </td>
 
-        <td><%= question.content %></td>
-        <td>
+          <td><%= question.content %></td>
+          <td>
 
-          <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
-          <% if answer.present? %>
-            <% if answer.is_aa1en %>
-               <span class="btn btn-success"> A </span>  <%= question.answer_1%>
-            <% else %>
-               <span class="btn btn-warning"> A </span>  <%= question.answer_1%>
-            <% end %>
+            <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
+            <% if answer.present? %>
+              <% if answer.is_aa1en %>
+                 <span class="btn btn-success"> A </span>  <%= question.answer_1%>
+              <% else %>
+                 <span class="btn btn-warning"> A </span>  <%= question.answer_1%>
+              <% end %>
+                <br><br>
+
+              <% if answer.is_bb1en %>
+                <span class="btn btn-success"> B </span>  <%= question.answer_2%>
+              <% else %>
+                <span class="btn btn-warning"> B </span>  <%= question.answer_2%>
+              <% end %>
               <br><br>
 
-            <% if answer.is_bb1en %>
-              <span class="btn btn-success"> B </span>  <%= question.answer_2%>
+              <% if answer.is_cc1en %>
+                <span class="btn btn-success"> C </span>  <%= question.answer_3%>
+              <% else %>
+                <span class="btn btn-warning"> C </span>  <%= question.answer_3%>
+              <% end %>
+
+              <br><br>
+              <% if answer.is_dd1en %>
+                <span class="btn btn-success"> D </span>  <%= question.answer_4%>
+              <% else %>
+                <span class="btn btn-warning"> D </span>  <%= question.answer_4%>
+              <% end %>
+
             <% else %>
-              <span class="btn btn-warning"> B </span>  <%= question.answer_2%>
+              您还没有做选择
             <% end %>
-            <br><br>
+          </td>
 
-            <% if answer.is_cc1en %>
-              <span class="btn btn-success"> C </span>  <%= question.answer_3%>
-            <% else %>
-              <span class="btn btn-warning"> C </span>  <%= question.answer_3%>
+          <td>
+
+            <% if question.is_a1en %>
+              A
+            <% elsif question.is_b1en %>
+              B
+            <% elsif question.is_c1en %>
+              C
+            <% elsif question.is_d1en %>
+              D
             <% end %>
+          </td>
 
-            <br><br>
-            <% if answer.is_dd1en %>
-              <span class="btn btn-success"> D </span>  <%= question.answer_4%>
-            <% else %>
-              <span class="btn btn-warning"> D </span>  <%= question.answer_4%>
-            <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <hr>
 
-          <% else %>
-            您还没有做选择
-          <% end %>
-        </td>
-
-        <td>
-
-          <% if question.is_a1en %>
-            A
-          <% elsif question.is_b1en %>
-            B
-          <% elsif question.is_c1en %>
-            C
-          <% elsif question.is_d1en %>
-            D
-          <% end %>
-        </td>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<hr>
+</div>
