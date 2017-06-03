@@ -1,6 +1,6 @@
 <div class="show-page">
   <div class="show-option">
-     <span>所有商品</span>    <%= link_to(@product.category.name, products_path(category: @product.category.name)) %>
+     <span>所有商品</span> <%= link_to(@product.category.name, products_path(category: @product.category.name)) %> 
      <span class="pull-right"><%= link_to("返回", url_for(:back)) %></span>
    </div>
   <!-- Start of product card -->
@@ -18,10 +18,8 @@
     <!-- End of left card -->
     <!-- Start of right cart -->
     <div class="details col-md-5" style="margin-top:50px;">
-      <h3 class="product-title"><%= @product.title %></h3>
-      <!-- <div class="rating">
-        <div class="star-rating" data-score= <%= @avg_review %> ></div>
-      </div> -->
+      <h3 class="product-title"> <%= @product.title %></h3>
+
       <div class="price-service">
         <p class="price"> 价格<span class="rmb">￥</span><span class="price"><%= @product.price %></span></p>
         <p class="service">说明 <span class="service-detail">本产品为虚拟产品 一经售出不予退款  </span></p>

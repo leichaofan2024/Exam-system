@@ -36,7 +36,7 @@ Product.create!(title:"政治卷",description:"历年政治选择题",size:1,qua
 
 end
 
-for i in 1..18 do
+for i in 1..36 do
 
 create_quizzes =
     Quiz.create!([title: "2016年考题",description:"2016年高考选择题", product_id: i])
@@ -47,7 +47,7 @@ create_quizzes =
 end
 
 
-for i in 1..25 do
+for i in 1..36 do
 create_questions =
   Question.create!([content: "1+1=？",answer_1:"2", answer_2:"1",answer_3:"3",answer_4:"4" ,
     quiz_id: i, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false])
@@ -65,7 +65,7 @@ create_questions =
      quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
 end
 
-for i in 26..54 do
+for i in 37..72 do
 create_questions =
  Question.create!([content: "1+3=？",answer_1:"1", answer_2:"2",answer_3:"4",answer_4:"5",
     quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
