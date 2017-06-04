@@ -21,7 +21,7 @@
         <td>
            <% product.quizzes.each do |quiz| %>
            <tr>
-            <td><%= link_to quiz.title,quiz_path(quiz) %></td>
+            <td><%= link_to quiz.title,admin_quiz_path(quiz) %></td>
             <td>
               <%= link_to("edit", edit_admin_quiz_path(quiz)) %> |
               <%= link_to("delete", admin_quiz_path(quiz), method: :delete, data:{confirm: "确定删除吗？"})%>
