@@ -58,6 +58,7 @@
                     <span class="btn btn-warning"> D </span>  <%= question.answer_4%>
                   <% end %>
 
+
                 <% else %>
                   您还没有做选择
                 <% end %>
@@ -72,7 +73,14 @@
                     正确答案：<span style= "color:red;"> D </span>
                   <% end %>
                 </div>
+                <br><br>
+
+                <strong>答案解析：</strong><br>
+                <%= question.description %>
+
                 <hr>
+
+
        </div>
      <% end %>
 

@@ -1,6 +1,6 @@
 <div class="show-page">
   <div class="show-option">
-     <span>所有商品</span> <%= link_to(@product.category.name, products_path(category: @product.category.name)) %> 
+     <span>所有商品</span> <%= link_to(@product.category.name, products_path(category: @product.category.name)) %>
      <span class="pull-right"><%= link_to("返回", url_for(:back)) %></span>
    </div>
   <!-- Start of product card -->
@@ -9,11 +9,12 @@
     <div class="preview col-md-7 " style="">
       <div class="preview-pic tab-content" >
         <% if @product.photos.present? %>
-        <div class="tab-pane active" id="pic-1"><%= image_tag(@product.photos[0].image.url) %></div>
-      </div>
+          <div class="tab-pane active" id="pic-1"><%= image_tag(@product.photos[0].image.url) %></div>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+        <% end %>
 
-      </ul>
-      <% end %>
+     </div>
     </div>
     <!-- End of left card -->
     <!-- Start of right cart -->
@@ -109,7 +110,11 @@
           <div class="tab-pane active" id="tab_default_1">
              <p class="product-description"><%= @product.description %></p>
              <p class="product-description2 text-center">课程展示</p>
+             <% if @product.photos.present? %>
              <%= image_tag(@product.photos[0].image.url) %>
+             <% else %>
+             <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+             <% end %>
              <p class="product-description2 text-center">课程细节</p>
 
              <div class="faq">
