@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
         Product.all.recent
       end
     end
+    @quiz = Quiz.all.first
   end
 
   def show
