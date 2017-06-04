@@ -49,37 +49,38 @@ end
 
 for i in 1..36 do
 create_questions =
-  Question.create!([content: "1+1=？",answer_1:"2", answer_2:"1",answer_3:"3",answer_4:"4" ,
-    quiz_id: i, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false])
+  Question.create!([content: "1. —I’m sorry I didn’t finish it on time. — _______",answer_1:"Fine，thanks.", answer_2:"No，thanks.",answer_3:"Thanks a lot.",answer_4:"hanks anyway." ,
+    quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true, description: "本题考查情景交际。上文说“对不起，我没有按时完成任务”，言语当中充满了抱歉，所以后者出于礼貌的考虑还是要谢谢他。Thanks anyway.“不管怎样还是要谢谢你”。"])
 
 create_questions =
-  Question.create!([content: "category什么意思？",answer_1:"类", answer_2:"类别",answer_3:"不知道",answer_4:"好",
-    quiz_id: i, is_a1en: false ,is_b1en: true,is_c1en: false,is_d1en: false])
+  Question.create!([content: "2. Lydia doesn’t feel like_____abroad. Her parents are old.",answer_1:"study", answer_2:"studying",answer_3:"studied",answer_4:"to study",
+    quiz_id: i, is_a1en: false ,is_b1en: true,is_c1en: false,is_d1en: false ,description: "考查固定结构。feel like doing“想要/喜欢做某事”，故选B项。句意为：Lydia不想出国留学，她的父母年龄太大了。"])
 
 create_questions =
-  Question.create!([content: "要如何背单词？",answer_1:"背诵", answer_2:"书写",answer_3:"默念",answer_4:"hello",
-    quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false])
+  Question.create!([content: "3.There is____in his words. We should have a try.",answer_1:"something", answer_2:"anything",answer_3:"nothing",answer_4:"everything",
+    quiz_id: i, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false, description:"考查不定代词。something有用的、重要的东西；anything任何东西；nothing没有任何东西；everything所有的东西。句意为：他说的话中有一些有用的东西，我们可以试一下。故选A项。"])
 
 create_questions =
-  Question.create!([content: "false怎么读？",answer_1:"不会", answer_2:"没答案",answer_3:"乱写的",answer_4:"问google",
-     quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
+  Question.create!([content: "4. Frank insisted that he was not asleep____I had great difficulty in waking him up.？",answer_1:"whether", answer_2:"although",answer_3:"for",answer_4:"so",
+     quiz_id: i, is_a1en: false ,is_b1en: true,is_c1en: false,is_d1en: false,description:"考查从属连词。although作为连词引导让步状语从句。句意为：尽管我很难叫醒他，但弗兰克却坚持说自己没有睡觉。前后句子表达“虽然……但是……”的转折语气，故选B项。whether作为连词可接名词从句表示“是否”的意思，接让步状语从句表示“不管, 无论”,与题意不符；for作为连词引导原因状语从句；so作为连词引导结果状语从句；均不合题意。"])
+
+create_questions =
+ Question.create!([content: "5. —How could you be so rude as to walk in here in the middle of my class? —_______",answer_1:"Nothing much", answer_2:"Nothing serious",answer_3:"Never again",answer_4:"Never mind",
+    quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false,description:"考查情景交际。上文说“你怎么能这么粗鲁，我们上着课就走了进来了呢”，有些生气的意思，所以下文应该表示歉意，用never again“再也不会出现这种情况了”符合题意，故选C项。nothing much“没有什么,无关紧要的事”；nothing serious“没什么严重的”；Never mind“没关系,不用担心”"])
 end
 
 for i in 37..72 do
-create_questions =
- Question.create!([content: "1+3=？",answer_1:"1", answer_2:"2",answer_3:"4",answer_4:"5",
-    quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true])
-
-create_questions =
-  Question.create!([content: "你好用英语怎么说",answer_1:"hello", answer_2:"hi",answer_3:"good",answer_4:"fine" ,
-    quiz_id: i, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false])
+  create_questions =
+    Question.create!([content: "1.There is____in his words. We should have a try.",answer_1:"something", answer_2:"anything",answer_3:"nothing",answer_4:"everything",
+      quiz_id: i, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false, description:"考查不定代词。something有用的、重要的东西；anything任何东西；nothing没有任何东西；everything所有的东西。句意为：他说的话中有一些有用的东西，我们可以试一下。故选A项。"])
 
 
 create_questions =
-  Question.create!([content: "乱写的题目？",answer_1:"第一类", answer_2:"第二类",answer_3:"第三类",answer_4:"第四类",
-    quiz_id: i, is_a1en: false ,is_b1en: true,is_c1en: false,is_d1en: false])
+  Question.create!([content: "2.There is____in his words. We should have a try.",answer_1:"something", answer_2:"anything",answer_3:"nothing",answer_4:"everything",
+    quiz_id: i, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false, description:"考查不定代词。something有用的、重要的东西；anything任何东西；nothing没有任何东西；everything所有的东西。句意为：他说的话中有一些有用的东西，我们可以试一下。故选A项。"])
+
 
 create_questions =
-  Question.create!([content: "努力学习？",answer_1:"规范一", answer_2:"规范二",answer_3:"规范三",answer_4:"规范四",
-    quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false])
+ Question.create!([content: "3. —How could you be so rude as to walk in here in the middle of my class? —_______",answer_1:"Nothing much", answer_2:"Nothing serious",answer_3:"Never again",answer_4:"Never mind",
+    quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: true,is_d1en: false,description:"考查情景交际。上文说“你怎么能这么粗鲁，我们上着课就走了进来了呢”，有些生气的意思，所以下文应该表示歉意，用never again“再也不会出现这种情况了”符合题意，故选C项。nothing much“没有什么,无关紧要的事”；nothing serious“没什么严重的”；Never mind“没关系,不用担心”"])
 end

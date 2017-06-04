@@ -21,6 +21,7 @@ class CreateQuestions < ActiveRecord::Migration[5.0]
       t.boolean :is_d1en, default: false
       t.boolean :is_e1en, default: false
       t.boolean :is_f1en, default: false
+      t.text  :description
 
       t.timestamps
     end
