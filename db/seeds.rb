@@ -49,7 +49,7 @@ end
 
 for i in 1..36 do
 create_questions =
-  Question.create!([content: "1. —I’m sorry I didn’t finish it on time. — _______",answer_1:"Fine，thanks.", answer_2:"No，thanks.",answer_3:"Thanks a lot.",answer_4:"hanks anyway." ,
+  Question.create!([content: "1. —I’m sorry I didn’t finish it on time. — _______",answer_1:"Fine，thanks.", answer_2:"No，thanks.",answer_3:"Thanks a lot.",answer_4:"Thanks anyway." ,
     quiz_id: i, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true, description: "本题考查情景交际。上文说“对不起，我没有按时完成任务”，言语当中充满了抱歉，所以后者出于礼貌的考虑还是要谢谢他。Thanks anyway.“不管怎样还是要谢谢你”。"])
 
 create_questions =
