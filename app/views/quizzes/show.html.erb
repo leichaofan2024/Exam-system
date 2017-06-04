@@ -3,11 +3,11 @@
 <div class= "quiz-show" style="overflow:auto;">
 
   <div class = "col-md-6 col-md-offset-3 quiz-content">
-    <h3>我的《<%= @quiz.title %>》考卷</h3>
+    <h3>我的<<%= @quiz.title %>>考卷</h3>
     <br>
     <p><%= @quiz.description %></p>
     <hr>
-    <p class="quiz-content-title">单项选择题（共4题； 每小题25分，满分100分）</p>
+    <p class="quiz-content-title">单项选择题（共5题； 每小题20分，满分100分）</p>
 
     <% @questions.each do |question| %>
       <div class="quiz-content-question button-style">

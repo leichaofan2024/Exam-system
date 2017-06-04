@@ -3,7 +3,7 @@
 <div class= "quiz-show" style="overflow:auto;">
 
   <div class = "col-md-6 col-md-offset-3 quiz-content">
-    <h3>我的《<%= @quiz.title %>》考试成绩单</h3>
+    <h3>我的<<%= @quiz.title %>>考试成绩单</h3>
     <br>
     <p><%= @quiz.description %></p>
     <br>
@@ -13,7 +13,7 @@
         <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
         <%if answer.present? %>
           <% if (answer.is_aa1en == question.is_a1en) && (answer.is_bb1en == question.is_b1en) && (answer.is_cc1en == question.is_c1en) && (answer.is_dd1en == question.is_d1en) %>
-            <% sum += 25 %>
+            <% sum += 20 %>
           <% end %>
         <% end %>
       <% end %>
@@ -22,7 +22,7 @@
     <br>
 
     <hr>
-    <p class="quiz-content-title">单项选择题（共4题； 每小题25分，满分100分）</p>
+    <p class="quiz-content-title">单项选择题（共5题； 每小题20分，满分100分）</p>
 
     <% @questions.each do |question| %>
       <div class="quiz-content-question button-style">
