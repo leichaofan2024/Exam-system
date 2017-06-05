@@ -1,5 +1,8 @@
 class Question < ApplicationRecord
-
+  mount_uploader :imagea, ImageaUploader
+  mount_uploader :imageb, ImagebUploader
+  mount_uploader :imagec, ImagecUploader
+  mount_uploader :imaged, ImagedUploader 
   belongs_to :quiz
   has_many :answers
 

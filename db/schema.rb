@@ -169,14 +169,21 @@ ActiveRecord::Schema.define(version: 20170531090952) do
     t.string   "answer_4"
     t.string   "answer_5"
     t.string   "answer_6"
-    t.boolean  "is_a1en",    default: false
-    t.boolean  "is_b1en",    default: false
-    t.boolean  "is_c1en",    default: false
-    t.boolean  "is_d1en",    default: false
-    t.boolean  "is_e1en",    default: false
-    t.boolean  "is_f1en",    default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "imagea"
+    t.string   "imageb"
+    t.string   "imagec"
+    t.string   "imaged"
+    t.string   "imagee"
+    t.string   "imagef"
+    t.boolean  "is_a1en",     default: false
+    t.boolean  "is_b1en",     default: false
+    t.boolean  "is_c1en",     default: false
+    t.boolean  "is_d1en",     default: false
+    t.boolean  "is_e1en",     default: false
+    t.boolean  "is_f1en",     default: false
+    t.text     "description"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "quizzes", force: :cascade do |t|

@@ -89,7 +89,12 @@
      <div  class="banner-slogan">
        <h1>
 
-       <p><span class="sub-slogan">翻越高考</span>--------历遍高考 翻越考题</br><br> </p>
+         <script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
+
+       <p><span class="sub-slogan">翻越高考</span>--------学子们加油！！！ <br><br>
+         距高考还有:  <br>
+        <div id="getting-started"></div>
+      </p>
 
        </h1>
 
@@ -407,3 +412,16 @@
 </div>
 
 <!-- End of Footer -->
+
+<!-- countdown -->
+
+
+<script type="text/javascript">
+  $("#getting-started")
+
+  .countdown("2017/06/07", function(event) {
+    $(this).text(
+      event.strftime('%D 天 %H:%M:%S')
+    );
+  });
+</script>

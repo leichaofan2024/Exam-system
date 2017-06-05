@@ -1,0 +1,19 @@
+<div class="col-md-8 col-md-offset-2">
+  <h2 class="text-center">编辑问题</h2>
+
+<%= simple_form_for [:admin,@quiz,@question] do |f| %>
+  <%= f.input :content, placeholder: "请输入题干信息"%>
+  <%= f.input :answer_1,placeholder: "请输入A选项描述" %><%= f.input :is_a1en, :label => "A" %>
+  <%= f.input :answer_2,placeholder: "请输入B选项描述" %><%= f.input :is_b1en, :label => "B" %>
+  <%= f.input :answer_3,placeholder: "请输入C选项描述" %><%= f.input :is_c1en, :label => "C" %>
+  <%= f.input :answer_4,placeholder: "请输入D选项描述" %><%= f.input :is_d1en, :label => "D" %>
+  <%= f.input :answer_5,placeholder: "请输入E选项描述" %><%= f.input :is_e1en, :label => "E" %>
+  <%= f.input :answer_6,placeholder: "请输入F选项描述" %><%= f.input :is_f1en, :label => "F" %>
+  <%= f.input :imagea , as: :file %>
+  <%= f.input :imageb , as: :file %>
+  <%= f.input :imagec , as: :file %>
+  <%= f.input :imaged , as: :file %>
+  <%= f.submit "确定建立", class: "btn btn-default" %>
+<% end %>
+
+</div>

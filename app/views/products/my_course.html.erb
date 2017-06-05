@@ -1,7 +1,9 @@
-<h3>用户<%= current_user.email%>已购买的试题库</h3>
+<div class="col-md-8 col-md-offset-2">
+  <h3>用户<%= current_user.email%>已购买的试题库</h3>
 
-<div class="row">
-    <div id="pins" class="transitions-enabled">
-      <%= render :partial => "product_items", :collection => @products, :as => :product %>
-    </div>
+  <div class="row">
+      <div id="pins" class="transitions-enabled">
+        <%= render :partial => "product_items", :collection => @products, :as => :product %>
+      </div>
+  </div>
 </div>
