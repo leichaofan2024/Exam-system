@@ -13,16 +13,11 @@
 ActiveRecord::Schema.define(version: 20170531090952) do
 
   create_table "answers", force: :cascade do |t|
-    t.integer  "exam_id"
-    t.integer  "question_id"
-    t.boolean  "is_aa1en",    default: false
-    t.boolean  "is_bb1en",    default: false
-    t.boolean  "is_cc1en",    default: false
-    t.boolean  "is_dd1en",    default: false
-    t.boolean  "is_ee1en",    default: false
-    t.boolean  "is_ff1en",    default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "true_answer"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "average_caches", force: :cascade do |t|
@@ -54,12 +49,41 @@ ActiveRecord::Schema.define(version: 20170531090952) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "exams", force: :cascade do |t|
+  create_table "choices", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "quiz_id"
-    t.string   "countdown"
+    t.string   "name"
+    t.boolean  "is_aa1en"
+    t.boolean  "is_bb1en"
+    t.boolean  "is_cc1en"
+    t.boolean  "is_dd1en"
+    t.boolean  "is_ee1en"
+    t.boolean  "is_ff1en"
+    t.integer  "exam_id"
+    t.float    "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.string   "name"
+    t.string   "question"
+    t.text     "answer_1"
+    t.text     "answer_2"
+    t.text     "answer_3"
+    t.text     "answer_4"
+    t.text     "answer_5"
+    t.text     "answer_6"
+    t.integer  "category_id"
+    t.string   "image"
+    t.boolean  "is_a1en"
+    t.boolean  "is_b1en"
+    t.boolean  "is_c1en"
+    t.boolean  "is_d1en"
+    t.boolean  "is_e1en"
+    t.boolean  "is_f1en"
+    t.string   "countdown"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "favorites", force: :cascade do |t|
