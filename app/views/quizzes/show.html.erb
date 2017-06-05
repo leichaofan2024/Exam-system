@@ -8,50 +8,11 @@
     <p><%= @quiz.description %></p>
     <hr>
     <p class="quiz-content-title">单项选择题（共5题； 每小题20分，满分100分）</p>
+    <div class="" id= "quiz-show-js-<%= @quiz.id%>">
 
-    <% @questions.each do |question| %>
-      <div class="quiz-content-question button-style">
-        <h4><%= question.content %></h4>
+    <%= render :partial => "answer_form", :collection => @questions, as: :question %>
 
-        <% answer = @exam.answers.order("id DESC").find{ |a| a.exam_id == @exam.id && a.question_id == question.id } %>
-        <% if answer.present? %>
-          <% if answer.is_aa1en %>
-            <%= link_to("A", set_answer_1_status_path(exam_id: @exam.id, question_id: question.id, is_aa1en: true),method: :post,class: "btn btn-success") %>  <%= question.answer_1%>
-          <% else %>
-            <%= link_to("A", set_answer_1_status_path(exam_id: @exam.id, question_id: question.id, is_aa1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_1%>
-          <% end %>
-            <br><br>
-          <% if answer.is_bb1en %>
-            <%= link_to("B", set_answer_2_status_path(exam_id: @exam.id, question_id: question.id, is_bb1en: true),method: :post,class: "btn btn-success") %>  <%= question.answer_2%>
-          <% else %>
-            <%= link_to("B", set_answer_2_status_path(exam_id: @exam.id, question_id: question.id, is_bb1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_2%>
-          <% end %>
-          <br><br>
-          <% if answer.is_cc1en %>
-            <%= link_to("C", set_answer_3_status_path(exam_id: @exam.id, question_id: question.id, is_cc1en: true),method: :post,class: "btn btn-success") %>  <%= question.answer_3%>
-          <% else %>
-            <%= link_to("C", set_answer_3_status_path(exam_id: @exam.id, question_id: question.id, is_cc1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_3%>
-          <% end %>
-
-          <br><br>
-          <% if answer.is_dd1en %>
-            <%= link_to("D", set_answer_4_status_path(exam_id: @exam.id, question_id: question.id, is_dd1en: true),method: :post,class: "btn btn-success") %>  <%= question.answer_4%>
-          <% else %>
-            <%= link_to("D", set_answer_4_status_path(exam_id: @exam.id, question_id: question.id, is_dd1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_4%>
-          <% end %>
-
-        <% else %>
-          <%= link_to("A", set_answer_1_status_path(exam_id: @exam.id, question_id: question.id, is_aa1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_1%><br><br>
-          <%= link_to("B", set_answer_2_status_path(exam_id: @exam.id, question_id: question.id, is_bb1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_2%><br><br>
-          <%= link_to("C", set_answer_3_status_path(exam_id: @exam.id, question_id: question.id, is_cc1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_3%><br><br>
-          <%= link_to("D", set_answer_4_status_path(exam_id: @exam.id, question_id: question.id, is_dd1en: true),method: :post,class: "btn btn-warning") %>  <%= question.answer_4%><br><br>
-        <% end %>
-
-      </div>
-
-      <hr>
-    <% end %>
-
+    </div>
 
     <hr>
 

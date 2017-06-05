@@ -1,0 +1,1 @@
+$("#quiz-show-js-<%= @quiz.id%>").html("<%=j render :partial=> "quizzes/answer_form", :collection => @questions, as: :question, locals: {:question => @question }%>");
